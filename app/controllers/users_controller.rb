@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user!, only: [:show, :edit, :update, :destroy]
+  before_action :set_user!, only: [:index, :show, :edit, :update, :destroy]
 
   def index
   end
@@ -9,7 +9,13 @@ class UsersController < ApplicationController
   end
 
   def create
-
+    @user = User.new(user_params)
+    if @user.valid?
+      @user.save
+      redirect_to 'index'
+    else
+      render :new
+    end
   end
 
   def show
