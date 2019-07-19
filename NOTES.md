@@ -30,8 +30,10 @@
  - description
  - location
  - cost
- - start_date (include day and time)
- - end_date (include day and time)
+ - start_date
+ - end_date
+ - start_time
+ - end_time
  - booked (boolean)
  - belongs_to :trip
 4. Flight
