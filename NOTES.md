@@ -1,0 +1,62 @@
+** Goal **
+
+1. This app should allow a user to sign-in and have CRUD capabilities with the trips associated to them.
+2. Within each trip, the user can view/add relevant details such as:
+ - Calendar showing duration of trip and location across each day
+ - Booking information (flights, hotels, activities, etc.)
+ - Costs related to all aspects of the trip
+ - Profiles for others attending same trip
+3. Each trip should have an admin that is able to make final edits on important trip details.
+
+
+** Models **
+
+1. User
+ - username
+ - email
+ - password
+ - has_many :trips
+ - has_many :activities, :flights, :accommodations, etc. through :trips <<- Unsure about the "has_many through" portion
+2. Trip
+ - name
+ - description
+ - start_date
+ - end_date
+ - total_cost
+ - belongs_to :user
+ - has_many :activities, :flights, :accommodations, :companions
+3. Activity
+ - name
+ - description
+ - location
+ - cost
+ - start_date (include day and time)
+ - end_date (include day and time)
+ - booked (boolean)
+ - belongs_to :trip
+4. Flight
+ - airline
+ - flight number
+ - departure_location
+ - arrival_location
+ - departure_time
+ - arrival_time
+ - checked_bags
+ - cost
+ - booked (boolean)
+ - belongs_to :trip
+5. Accommodation
+ - name
+ - type (hostel, hotel airbnb, etc.)
+ - location
+ - arrival_date
+ - departure_date
+ - check-in
+ - check-out
+ - cost
+ - booked
+ - belongs_to :trip
+6. Companions
+ - confirmed
+ - belongs_to :trip
+ - has_many :users
