@@ -6,7 +6,12 @@
  - Booking information (flights, hotels, activities, etc.)
  - Costs related to all aspects of the trip
  - Profiles for others attending same trip
-3. Each trip should have an admin that is able to make final edits on important trip details.
+
+*** Eventual Additions ***
+
+3. Each trip should have a user designated as an admin that is able to make final edits on important trip details.
+4. Trips marked as "public" should be visible to all users of the site
+ - This would allow other users to get recommendations for a trip they may be planning
 
 
 ** Models **
@@ -23,6 +28,7 @@
  - belongs_to :trip
 
 4. Flight: airline, flight_number, departure_location, arrival_location, departure_time, arrival_time, checked_bags, cost, booked (boolean)
+ - Add confirmation_number that is only visible to the user?
  - belongs_to :trip
 
 5. Accommodation: name, type, location, arrival_date, departure_date, check_in, check_out, cost, booked
