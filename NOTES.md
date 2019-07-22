@@ -11,54 +11,23 @@
 
 ** Models **
 
-1. User
- - username
- - email
- - password
+1. User: username, email, password
  - has_many :trips
  - has_many :activities, :flights, :accommodations, etc. through :trips <<- Unsure about the "has_many through" portion
-2. Trip
- - name
- - description
- - start_date
- - end_date
- - total_cost
+
+2. Trip: name, description, start_date, end_date, total_cost
  - belongs_to :user
  - has_many :activities, :flights, :accommodations, :companions
-3. Activity
- - name
- - description
- - location
- - cost
- - start_date
- - end_date
- - start_time
- - end_time
- - booked (boolean)
+
+3. Activity: name, description, location, cost, start_date, end_date, start_time, end_time, booked (boolean)
  - belongs_to :trip
-4. Flight
- - airline
- - flight number
- - departure_location
- - arrival_location
- - departure_time
- - arrival_time
- - checked_bags
- - cost
- - booked (boolean)
+
+4. Flight: airline, flight_number, departure_location, arrival_location, departure_time, arrival_time, checked_bags, cost, booked (boolean)
  - belongs_to :trip
-5. Accommodation
- - name
- - type (hostel, hotel airbnb, etc.)
- - location
- - arrival_date
- - departure_date
- - check-in
- - check-out
- - cost
- - booked
+
+5. Accommodation: name, type, location, arrival_date, departure_date, check_in, check_out, cost, booked
  - belongs_to :trip
-6. Companions
- - confirmed
+
+6. Companions: confirmed
  - belongs_to :trip
  - has_many :users
