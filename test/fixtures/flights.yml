@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  airline: MyString
+  flight_number: MyString
+  departure_location: MyString
+  arrival_location: MyString
+  departure_time: 2019-07-25 20:36:35
+  arrival_time: 2019-07-25 20:36:35
+  checked_bags: 1
+  cost: 9.99
+  booked: false
+
+two:
+  airline: MyString
+  flight_number: MyString
+  departure_location: MyString
+  arrival_location: MyString
+  departure_time: 2019-07-25 20:36:35
+  arrival_time: 2019-07-25 20:36:35
+  checked_bags: 1
+  cost: 9.99
+  booked: false
