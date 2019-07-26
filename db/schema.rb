@@ -10,59 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_19_022106) do
-
-  create_table "accommodations", force: :cascade do |t|
-    t.string "name"
-    t.string "type"
-    t.string "location"
-    t.date "arrival_date"
-    t.date "departure_date"
-    t.time "check_in"
-    t.time "check_out"
-    t.decimal "cost"
-    t.boolean "booked"
-    t.integer "trip_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "activities", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "location"
-    t.decimal "cost"
-    t.date "start_date"
-    t.date "end_date"
-    t.time "start_time"
-    t.time "end_time"
-    t.boolean "booked"
-    t.integer "trip_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "companions", force: :cascade do |t|
-    t.boolean "confirmed"
-    t.boolean "trip_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "flights", force: :cascade do |t|
-    t.string "airline"
-    t.string "flight_number"
-    t.string "departure_location"
-    t.string "arrival_location"
-    t.time "departure_time"
-    t.time "arrival_time"
-    t.integer "checked_bags"
-    t.decimal "cost"
-    t.boolean "booked"
-    t.integer "trip_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2019_07_19_020746) do
 
   create_table "trips", force: :cascade do |t|
     t.string "name"

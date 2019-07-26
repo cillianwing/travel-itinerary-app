@@ -18,11 +18,11 @@
 
 1. User: username, email, password
  - has_many :trips
- - has_many :activities, :flights, :accommodations, etc. through :trips <<- Unsure about the "has_many through" portion
 
 2. Trip: name, description, start_date, end_date, total_cost
  - belongs_to :user
  - has_many :activities, :flights, :accommodations, :companions
+    -> May require a has_many, through for each
 
 3. Activity: name, description, location, cost, start_date, end_date, start_time, end_time, booked (boolean)
  - belongs_to :trip
