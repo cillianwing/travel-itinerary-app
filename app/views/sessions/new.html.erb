@@ -1,11 +1,23 @@
-<%= form_for @user, url: login_path, method: :post do |f| %>
+<div class="auth-form px-3" >
+  <div class="auth-form-body mt-3">
+    <%= form_for @user, url: login_path, method: :post do |f| %>
 
-  <%= f.label :username, "Username: " %>
-  <%= f.text_field :username %><br />
+      <div class="auth-form-header p-0">
+        <h1>Log In to Travel Itinerary</h1>
+      </div>
 
-  <%= f.label :password, "Password: " %>
-  <%= f.password_field :password %><br />
+      <%= f.label :username, "Username: " %>
+      <%= f.text_field :username, class: "form-control input-block" %><br />
 
-  <%= f.submit "Log In" %>
+      <%= f.label :password, "Password: " %>
+      <%= f.password_field :password, class: "form-control form-control input-block" %><br />
 
-<% end %>
+      <%= f.submit "Log In", class: "btn btn-primary btn-block" %>
+
+      <p class="create-account-callout">
+        New User? <%= link_to "Create an account.", new_user_path %>
+      </p>
+
+    <% end %>
+  </div>
+</div>
