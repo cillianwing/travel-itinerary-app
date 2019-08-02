@@ -1,4 +1,4 @@
-<%= form_for @user, controller: 'users', action: 'create', method: 'post' do |f| %>
+<%= form_for current_user, controller: 'users', action: 'create', method: 'post' do |f| %>
 
   <%= f.label :username, "Username: " %>
   <%= f.text_field :username %><br />
