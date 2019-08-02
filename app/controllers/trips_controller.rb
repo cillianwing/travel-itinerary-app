@@ -2,6 +2,7 @@ class TripsController < ApplicationController
   before_action :require_login
 
   def index
+    @trips = current_user.trips
   end
 
   def new
