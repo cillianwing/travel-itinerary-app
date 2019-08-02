@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     !!session[:user_id]
   end
 
-  def require_logged_in
+  def require_login
     return redirect_to root_path unless logged_in?
   end
 
