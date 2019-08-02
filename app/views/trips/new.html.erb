@@ -1,0 +1,17 @@
+<%= form_for @trip, url: { action: 'create' } do |f| %>
+
+  <%= f.label :name, "What would you like to name this trip? " %><br />
+  <%= f.text_field :name %><br />
+
+  <%= f.label :description, "Please right a short description of the trip. " %><br />
+  <%= f.text_area :description %><br />
+
+  <%= f.label :start_date, "Start Date: " %><br />
+  <%= f.date_field :start_date %><br />
+
+  <%= f.label :end_date, "End Date: " %><br />
+  <%= f.date_field :end_date %><br />
+
+  <%= f.submit "Create Trip" %>
+
+<% end %>
