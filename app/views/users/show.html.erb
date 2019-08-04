@@ -1,7 +1,13 @@
 <%= alert %><br />
 
-<!-- Will ultimately have links to all the different trips here -->
-
 <%= link_to "All Trips", user_trips_path(current_user) %><br />
+
+<!--
+  - link to all flights for the user
+  - link to all accommodations for the user
+  - link to all activities for the user
+
+  - Format such that each option is a small box showing title, description and an image?
+-->
 
 <%= link_to "Log Out", logout_path %>

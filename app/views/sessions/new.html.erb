@@ -5,6 +5,10 @@
       <h1><%= link_to "Sign in to TravelApp!", root_path %></h1>
     </div>
 
+    <% if flash[:alert] %>
+      <div class="flash flash-full flash-error"><%= flash[:alert] %></div>
+    <% end %>
+
     <div class="auth-form-body mt-3">
 
       <%= form_for current_user, url: login_path, method: :post do |f| %>

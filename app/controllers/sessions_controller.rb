@@ -7,11 +7,11 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(username: params[:user][:username])
     if @user
-      return redirect_to login_path unless @user.try(:authenticate, params[:user][:password])
+      return redirect_to login_path, :flash => { alert: "Invalid password. Please try again." } unless @user.try(:authenticate, params[:user][:password])
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
-      render :'/users/new'
+      render :'/users/new', alert: "User not found. Please create a new account."
     end
   end
 
