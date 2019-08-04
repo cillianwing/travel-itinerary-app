@@ -1,21 +1,38 @@
-<%= form_for current_user, controller: 'users', action: 'create', method: 'post' do |f| %>
+<body class="user-creation">
+  <div class="signup-form px-3" >
 
-  <%= f.label :username, "Username: " %>
-  <%= f.text_field :username %><br />
+    <div class="signup-form-header p-0">
+      <%= link_to image_tag("travel-banner.png", class: "signup-form px-3"), root_path %>
+    </div>
 
-  <%= f.label :email, "Email: " %>
-  <%= f.email_field :email %><br />
+    <% if flash[:alert] %>
+      <div class="flash flash-full flash-error"><%= flash[:alert] %></div>
+    <% end %>
 
-  <%= f.label :password, "Password" %>
-  <%= f.password_field :password %><br />
+    <div class="signup-form-body mt-3">
 
-  <%= f.label :password_confirmation, "Confirm Password: " %>
-  <%= f.password_field :password_confirmation %><br />
+    <%= form_for current_user, controller: 'users', action: 'create', method: 'post' do |f| %>
 
-  <%= f.submit "Create User" %>
+      <%= f.label :username, "Username: " %>
+      <%= f.text_field :username, class: "form-control input-block" %><br />
 
-<% end %>
+      <%= f.label :email, "Email: " %>
+      <%= f.email_field :email, class: "form-control input-block" %><br />
 
-Already have an account?<%= link_to "Log in here.", login_path %><br />
+      <%= f.label :password, "Password" %>
+      <%= f.password_field :password, class: "form-control input-block" %><br />
 
-<%= link_to "Home", root_path %>
+      <%= f.label :password_confirmation, "Confirm Password: " %>
+      <%= f.password_field :password_confirmation, class: "form-control input-block" %><br />
+
+      <%= f.submit "Create User", class: "btn btn-primary btn-block" %>
+
+      <p class="login-callout mt-3">
+        Already have an account? <%= link_to "Log in.", login_path %>
+      </p>
+
+    <% end %>
+
+    </div>
+  </div>
+</body>
