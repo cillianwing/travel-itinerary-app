@@ -10,15 +10,19 @@ class TripsController < ApplicationController
   end
 
   def new
-    @trip = Trip.new(user_id: params[:user_id])
+    @trip = Trip.new(user_id: params[:user_id]) if params[:user_id]
   end
 
   def create
-    @trip = current_user.trips.new(trip_params)
-    if @trip.save
-      redirect_to @trip
+    if current_user.id == params[:user_id].to_i
+      @trip = Trip.new(trip_params)
+      if @trip.save
+        redirect_to user_trip_path(current_user, @trip)
+      else
+        render :new
+      end
     else
-      render :new
+      redirect_to user_path(current_user), alert: "You cannot view another user's trips."
     end
   end
 

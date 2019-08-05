@@ -1,4 +1,6 @@
-<%= alert %><br />
+<% if !alert.nil? %>
+  <%= alert %><br />
+<% end %>
 
 <%= link_to "All Trips", user_trips_path(current_user) %><br />
 
