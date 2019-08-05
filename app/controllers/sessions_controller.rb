@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
-      render :'/users/new', alert: "User not found. Please create a new account."
+      redirect_to new_user_path, :flash => { alert: "User not found. Please create a new account." }
     end
   end
 
