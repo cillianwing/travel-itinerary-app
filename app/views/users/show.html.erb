@@ -1,8 +1,20 @@
+<div class="topnav" id="myTopnav">
+  <%= link_to "Home", root_path %>
+  <%= link_to "About", root_path %>
+  <%= link_to "Profile", root_path %>
+  <%= link_to "Logout", logout_path, class: "logout" %>
+</div>
+
 <% if !alert.nil? %>
   <%= alert %><br />
 <% end %>
 
-  <div class="img"><%= link_to image_tag("waterfall-mountains.jpg"), user_trips_path(current_user) %></div>
+<div class="row mt-3">
+  <div class="img column"><%= link_to image_tag("trips.jpg"), user_trips_path(current_user) %></div>
+  <div class="img column"><%= link_to image_tag("flying.jpg"), user_trips_path(current_user) %></div>
+  <div class="img column"><%= link_to image_tag("hotel-pillows.jpg"), user_trips_path(current_user) %></div>
+  <div class="img column"><%= link_to image_tag("hiking.jpg"), user_trips_path(current_user) %></div>
+</div>
 
 <!--
   - link to all flights for the user
@@ -11,5 +23,3 @@
 
   - Format such that each option is a small box showing title, description and an image?
 -->
-
-<%= link_to "Log Out", logout_path %>
