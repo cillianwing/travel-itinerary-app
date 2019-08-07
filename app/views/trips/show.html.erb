@@ -2,6 +2,10 @@
 <p><%= @trip.description %></p>
 <p>Travel Dates: <%= @trip.start_date %> -> <%= @trip.end_date %></p>
 
+<%= link_to "Edit Trip", edit_user_trip_path %><br />
+
+<%= link_to "All Trips", user_trips_path %>
+
 <!--
  - Links to add flights, accommodations, etc.
 -->

@@ -27,7 +27,11 @@ class TripsController < ApplicationController
   end
 
   def show
-    @trip = Trip.find(params[:id])
+    if current_user.id == params[:user_id].to_i
+      @trip = Trip.find(params[:id])
+    else
+      redirect_to user_path(current_user), alert: "You cannot view another user's trips."
+    end
   end
 
   def edit
