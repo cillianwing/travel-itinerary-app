@@ -2,11 +2,7 @@ class TripsController < ApplicationController
   before_action :require_login
 
   def index
-    if current_user.id == params[:user_id].to_i
-      @trips = current_user.trips
-    else
-      redirect_to user_path(current_user), alert: "You cannot view another user's trips."
-    end
+    @trips = current_user.trips if check_user
   end
 
   def new
@@ -14,24 +10,16 @@ class TripsController < ApplicationController
   end
 
   def create
-    if current_user.id == params[:user_id].to_i
-      @trip = Trip.new(trip_params)
-      if @trip.save
-        redirect_to user_trip_path(current_user, @trip)
-      else
-        render :new
-      end
+    @trip = Trip.new(trip_params) if check_user
+    if @trip.save
+      redirect_to user_trip_path(current_user, @trip)
     else
-      redirect_to user_path(current_user), alert: "You cannot view another user's trips."
+      render :new
     end
   end
 
   def show
-    if current_user.id == params[:user_id].to_i
-      @trip = Trip.find(params[:id])
-    else
-      redirect_to user_path(current_user), alert: "You cannot view another user's trips."
-    end
+    @trip = Trip.find(params[:id]) if check_user
   end
 
   def edit

@@ -13,6 +13,14 @@ class ApplicationController < ActionController::Base
     return redirect_to root_path, alert: "Please log in." unless logged_in?
   end
 
+  def check_user
+    if current_user.id != params[:user_id].to_i
+      redirect_to user_path(current_user), alert: "You cannot view another user's trips."
+    else
+      true
+    end
+  end
+
   helper_method :current_user
 
 end
