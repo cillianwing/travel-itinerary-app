@@ -5,13 +5,15 @@
       <%= link_to image_tag("travel-banner.png", class: "signup-form px-3"), login_path %>
     </div>
 
-    <% if flash[:alert] %>
-      <div class="flash flash-full flash-error"><%= flash[:alert] %></div>
+    <% if @user.errors.any? %>
+      <div class="flash flash-full flash-error"><% @user.errors.messages.each do |attr, message| %>
+        <%= message[0] %><br />
+      <% end %></div>
     <% end %>
 
     <div class="signup-form-body mt-3">
 
-    <%= form_for current_user, controller: 'users', action: 'create', method: 'post' do |f| %>
+    <%= form_for @user do |f| %>
 
       <%= f.label :username, "Username: " %>
       <%= f.text_field :username, class: "form-control input-block" %><br />

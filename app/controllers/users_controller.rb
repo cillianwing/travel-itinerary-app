@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :require_login, only: [:show, :edit, :update, :destroy]
 
   def new
+    @user = User.new
   end
 
   def create
@@ -11,7 +12,6 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       render :new
-      # use @user.errors.messages to put out a notice?
     end
   end
 

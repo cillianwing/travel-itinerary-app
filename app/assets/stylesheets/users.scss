@@ -116,45 +116,6 @@
   text-align: center;
 }
 
-
-.session-authentication .flash {
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    font-size: 13px;
-    margin: 0 auto 10px;
-    padding: 15px 20px;
-}
-
-.user-creation .flash {
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    font-size: 13px;
-    margin: 0 auto 10px;
-    padding: 15px 20px;
-}
-
-.flash-full {
-    border-radius: 0;
-    border-width: 1px 0;
-    margin-top: -1px;
-}
-
-.flash {
-    background-color: #dbedff;
-    border: 1px solid rgba(27,31,35,.15);
-    border-radius: 3px;
-    color: #032f62;
-    padding: 16px;
-    position: relative;
-}
-
-.flash-error {
-    background-color: #ffdce0;
-    color: #86181d;
-}
-
 img {
   border: 1px solid #ddd; /* Gray border */
   border-radius: 4px;  /* Rounded border */
@@ -230,7 +191,45 @@ img:hover {
 }
 
 .field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+  color: #86181d;
+  background-color: #ffdce0;
+  width: 100%;
+}
+
+.session-authentication .flash {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 13px;
+    margin: 0 auto 10px;
+    padding: 15px 20px;
+}
+
+.user-creation .flash {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 13px;
+    margin: 0 auto 10px;
+    padding: 15px 20px;
+}
+
+.flash-full {
+    border-radius: 0;
+    border-width: 1px 0;
+    margin-top: -1px;
+}
+
+.flash {
+    background-color: #dbedff;
+    border: 1px solid rgba(27,31,35,.15);
+    border-radius: 3px;
+    color: #032f62;
+    padding: 16px;
+    position: relative;
+}
+
+.flash-error {
+    background-color: #ffdce0;
+    color: #86181d;
 }
