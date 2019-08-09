@@ -228,3 +228,9 @@ img:hover {
 .topnav .icon {
   display: none;
 }
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
