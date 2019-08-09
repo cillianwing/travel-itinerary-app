@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :flights, through: :trips
   # Validations
   validates :username, presence: true, uniqueness: { message: "%{attribute} already taken." }
-  validates :email, presence: true, uniqueness: { message: "%{attribute} already taken." }
+  validates :email, presence: true
   validates :password, presence: true
 
 end
