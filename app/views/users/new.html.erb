@@ -5,6 +5,10 @@
       <%= link_to image_tag("travel-banner.png", class: "signup-form px-3"), login_path %>
     </div>
 
+    <% if flash[:alert] %>
+      <div class="flash flash-full flash-error"><%= flash[:alert] %></div>
+    <% end %>
+
     <% if @user.errors.any? %>
       <div class="flash flash-full flash-error"><% @user.errors.messages.each do |attr, message| %>
         <%= message[0] %><br />
