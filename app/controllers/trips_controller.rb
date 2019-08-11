@@ -23,9 +23,16 @@ class TripsController < ApplicationController
   end
 
   def edit
+    @trip = Trip.find(params[:id]) if check_user
   end
 
   def update
+    @trip = Trip.update(trip_params) if check_user
+    if @trip.save
+      redirect_to user_trip_path(current_user, @trip)
+    else
+      render :edit
+    end
   end
 
   def destroy
