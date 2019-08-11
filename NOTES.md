@@ -27,11 +27,11 @@
 3. Activity: name, description, location, cost, start_date, end_date, start_time, end_time, booked (boolean)
  - belongs_to :trip
 
-4. Flight: airline, flight_number, departure_location, arrival_location, departure_time, arrival_time, checked_bags, cost, booked (boolean)
+4. Flight: airline, flight_number, departure_location, arrival_location, departure_date, arrival_date, departure_time, arrival_time, checked_bags, cost, booked (boolean)
  - Add confirmation_number that is only visible to the user?
  - belongs_to :trip
 
-5. Accommodation: name, type, location, arrival_date, departure_date, check_in, check_out, cost, booked
+5. Accommodation: name, type, location, arrival_date, departure_date, check_in_time, check_out_time, cost, booked
  - belongs_to :trip
 
 6. Companions: confirmed
