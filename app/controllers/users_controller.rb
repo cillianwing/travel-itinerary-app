@@ -16,6 +16,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    if current_user.id != params[:id].to_i
+      redirect_to user_path(current_user), alert: "You cannot view another user's profile."
+    end
   end
 
   def edit
