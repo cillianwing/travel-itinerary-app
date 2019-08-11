@@ -1,5 +1,6 @@
 class Flight < ApplicationRecord
-
+  has_many :tickets
+  has_many :trips, through: :tickets
 
   validates :airline, presence: true
   validates :flight_number, presence: true

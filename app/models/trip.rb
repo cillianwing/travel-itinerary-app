@@ -1,7 +1,8 @@
 class Trip < ApplicationRecord
   include TripsHelper
   belongs_to :user
-  # will need to add relationship to flights next
+  has_many :tickets
+  has_many :flights, through: :tickets
 
   validates :name, presence: true
   validates :description, presence: true
