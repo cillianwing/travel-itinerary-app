@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def check_user
     if current_user.id != params[:user_id].to_i
-      redirect_to user_path(current_user), alert: "You cannot view another user's trips."
+      redirect_to user_path(current_user), alert: "You cannot view another user's profile."
     else
       true
     end
