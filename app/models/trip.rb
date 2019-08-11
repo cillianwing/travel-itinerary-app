@@ -9,7 +9,4 @@ class Trip < ApplicationRecord
   validates :end_date, presence: true
   validate :start_date_before_end_date, :date_confirm
 
-  # need validation that checks if a new trip has dates that fall within the dates of an existing trip
-  # if trip exists, direct user to the existing trip page
-
 end

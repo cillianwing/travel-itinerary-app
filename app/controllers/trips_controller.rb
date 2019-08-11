@@ -36,6 +36,9 @@ class TripsController < ApplicationController
   end
 
   def destroy
+    @trip = Trip.find(params[:id]) if check_user
+    @trip.destroy
+    redirect_to user_trips_path(current_user)
   end
 
   private

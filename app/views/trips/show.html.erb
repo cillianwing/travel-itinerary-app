@@ -4,6 +4,8 @@
 
 <%= link_to "Edit Trip", edit_user_trip_path %><br />
 
+<%= link_to "Delete Trip", user_trip_path(current_user, @trip), method: :delete %><br />
+
 <%= link_to "All Trips", user_trips_path %>
 
 <!--
