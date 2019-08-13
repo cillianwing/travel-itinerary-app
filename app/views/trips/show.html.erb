@@ -2,6 +2,8 @@
 <p><%= @trip.description %></p>
 <p>Travel Dates: <%= @trip.start_date %> -> <%= @trip.end_date %></p>
 
+<%= link_to "Flights for this trip", trip_flights_path(@trip) %><br />
+
 <%= link_to "Edit Trip", edit_user_trip_path %><br />
 
 <%= link_to "Delete Trip", user_trip_path(current_user, @trip), method: :delete, data: { confirm: "Are you sure you want to delete this trip?" } %><br />
