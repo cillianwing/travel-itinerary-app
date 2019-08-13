@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # Relationships
   has_many :trips
   # Validations
-  validates :name, :email, :password, presence: true
-  validates :username, presence: true, uniqueness: { message: "%{attribute} already taken." }
+  validates :name, :password, presence: true
+  validates :email, presence: true, uniqueness: { message: "%{attribute} already taken." }
 
 end

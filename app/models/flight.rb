@@ -1,4 +1,5 @@
 class Flight < ApplicationRecord
+  scope :booked, -> { where(booked: true) }
   has_many :tickets
   has_many :trips, through: :tickets
 

@@ -19,7 +19,7 @@
 
     <%= form_for @user do |f| %>
 
-      <%= f.hidden_field :username, value: @user.username %>
+      <%= f.hidden_field :email, value: @user.email %>
 
       <%= f.hidden_field :password, value: @user.password_digest %>
 
@@ -31,9 +31,6 @@
 
       <%= f.label :location, "Location: " %>
       <%= f.text_field :location, class: "form-control input-block" %><br />
-
-      <%= f.label :email, "Email: " %>
-      <%= f.email_field :email, class: "form-control input-block" %><br />
 
       <%= f.submit "Update User", class: "btn btn-primary btn-block" %>
 

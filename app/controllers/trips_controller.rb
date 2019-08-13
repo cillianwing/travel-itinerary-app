@@ -1,9 +1,10 @@
 class TripsController < ApplicationController
   before_action :require_login
   before_action :check_user
+  before_action :set_trip, only: [:show, :edit, :update, :destroy]
 
   def index
-    @trips = current_user.trips
+    @trips = current_user.trips.order(:start_date)
   end
 
   def new
@@ -20,15 +21,12 @@ class TripsController < ApplicationController
   end
 
   def show
-    @trip = Trip.find(params[:id])
   end
 
   def edit
-    @trip = Trip.find(params[:id])
   end
 
   def update
-    @trip = Trip.find(params[:id])
     if @trip.update(trip_params)
       redirect_to user_trip_path(current_user, @trip)
     else
@@ -37,7 +35,6 @@ class TripsController < ApplicationController
   end
 
   def destroy
-    @trip = Trip.find(params[:id])
     @trip.destroy
     redirect_to user_trips_path(current_user)
   end
@@ -46,6 +43,10 @@ class TripsController < ApplicationController
 
   def trip_params
     params.require(:trip).permit(:name, :description, :start_date, :end_date, :user_id)
+  end
+
+  def set_trip
+    @trip = Trip.find(params[:id])
   end
 
 end

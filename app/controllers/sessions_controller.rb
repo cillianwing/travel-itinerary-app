@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if auth_hash = request.env["omniauth.auth"]
 
     else
-      @user = User.find_by(username: params[:user][:username])
+      @user = User.find_by(email: params[:user][:email])
       if @user
         return redirect_to login_path, :flash => { alert: "Invalid password. Please try again." } unless @user.try(:authenticate, params[:user][:password])
         session[:user_id] = @user.id
