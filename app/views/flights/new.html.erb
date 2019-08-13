@@ -33,9 +33,7 @@
   <%= f.label :cost %><br />
   <%= f.number_field :cost %><br />
 
-  <%= f.label :booked %><br />
-  <%= f.radio_button :booked, false, checked: true %> No<br />
-  <%= f.radio_button :booked, true %> Yes<br />
+  <%= f.hidden_field :booked, value: true %>
 
   <%= f.submit %>
 
