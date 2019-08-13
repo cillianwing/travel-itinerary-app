@@ -1,8 +1,9 @@
 class FlightsController < ApplicationController
   before_action :require_login
-  before_action :check_user
 
   def index
+    @trips = current_user.trips
+    @flights = @trips.collect { |trip| trip.flights }
   end
 
   def show
