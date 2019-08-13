@@ -18,6 +18,7 @@
 
 1. User: username, email, password
  - has_many :trips
+ -> Adding name, biography, location attributes
 
 2. Trip: name, description, start_date, end_date, total_cost
  - belongs_to :user

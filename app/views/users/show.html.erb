@@ -1,12 +1,8 @@
 <div class="topnav" id="myTopnav">
-  <%= link_to "Home", users_path(current_user) %>
-  <%= link_to "Edit Profile", edit_user_path(current_user) %>
+  <%= link_to "Home", users_path %>
+  <%= link_to "Profile", user_path(current_user) %>
   <%= link_to "Logout", logout_path, class: "logout" %>
 </div>
-
-<% if flash[:alert] %>
-  <div class="flash flash-full flash-error"><%= flash[:alert] %></div>
-<% end %>
 
 <div class="row mt-3">
   <div class="column img-title">Trips</div>

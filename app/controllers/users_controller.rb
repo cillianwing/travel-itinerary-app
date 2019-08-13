@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
-  before_action :require_login, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, only: [:index, :show, :edit, :update, :destroy]
+
+  def index
+    @user = current_user
+  end
 
   def new
     @user = User.new
@@ -9,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to users_path(@user)
+      redirect_to users_path
     else
       render :new
     end
@@ -17,7 +21,7 @@ class UsersController < ApplicationController
 
   def show
     if current_user.id != params[:id].to_i
-      redirect_to users_path(current_user), alert: "You cannot view another user's profile."
+      redirect_to users_path, alert: "You cannot view another user's profile."
     end
   end
 
@@ -28,7 +32,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
-      redirect_to users_path(@user)
+      redirect_to users_path
     else
       render :edit
     end

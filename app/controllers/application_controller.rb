@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_user
-    @user = User.find_by(id: session[:user_id])
+    @user = User.find_by(id: session[:user_id]) || User.new
   end
 
   def current_trip
@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 
   def check_user
     if current_user.id != params[:user_id].to_i
-      redirect_to users_path(current_user), alert: "You cannot view another user's profile."
+      redirect_to users_path, alert: "You cannot view another user's profile."
     else
       true
     end
