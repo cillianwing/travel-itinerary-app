@@ -7,7 +7,7 @@ class TripsController < ApplicationController
   end
 
   def new
-    @trip = Trip.new(user_id: params[:user_id]) if params[:user_id]
+    @trip = Trip.new
   end
 
   def create

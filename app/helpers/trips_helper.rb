@@ -7,7 +7,8 @@ module TripsHelper
   end
 
   def date_confirm
-    Trip.all.each do |trip|
+    @user = User.find_by(id: self.user_id)
+    @user.trips.each do |trip|
       if trip.id != self.id
         if start_date > trip.start_date && start_date < trip.end_date
           errors.add(:start_date, "cannot be during an existing trip")
