@@ -1,0 +1,36 @@
+<%= f.label :airline %><br />
+<%= f.text_field :airline %><br />
+
+<%= f.label :flight_number %><br />
+<%= f.text_field :flight_number %><br />
+
+<%= f.label :confirmation_number %><br />
+<%= f.text_field :confirmation_number %><br />
+
+<%= f.label :departure_location %><br />
+<%= f.text_field :departure_location %><br />
+
+<%= f.label :arrival_location %><br />
+<%= f.text_field :arrival_location %><br />
+
+<%= f.label :departure_date %><br />
+<%= f.date_field :departure_date %><br />
+
+<%= f.label :arrival_date %><br />
+<%= f.date_field :arrival_date %><br />
+
+<%= f.label :departure_time %> (ex. 11:45 AM)<br />
+<%= f.time_field :departure_time, value: "%H:%M" %><br />
+
+<%= f.label :arrival_time %> (ex. 2:30 PM)<br />
+<%= f.time_field :arrival_time, value: "%H:%M" %><br />
+
+<%= f.label :checked_bags %><br />
+<%= f.number_field :checked_bags %><br />
+
+<%= f.label :cost %><br />
+<%= f.number_field :cost %><br />
+
+<%= f.hidden_field :booked, value: true %>
+
+<%= f.submit %>

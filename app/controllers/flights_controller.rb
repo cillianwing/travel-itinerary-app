@@ -11,12 +11,11 @@ class FlightsController < ApplicationController
   end
 
   def new
-    @flight = Flight.new
+    @flight = current_trip.flights.new
   end
 
   def create
-    @trip = Trip.find_by(id: params[:trip_id])
-    @flight = Flight.new(flight_params)
+    @flight = current_trip.flights.new(flight_params)
     if @flight.save
       redirect_to trip_flight_path(current_trip, @flight)
     else
@@ -31,7 +30,7 @@ class FlightsController < ApplicationController
   def update
     @flight = Flight.find(params[:id])
     if @flight.update(flight_params)
-      redirect_to trip_flight_path(current_trip, @flight)
+      redirect_to trip_flight_path
     else
       render :edit
     end
@@ -48,7 +47,7 @@ class FlightsController < ApplicationController
   def flight_params
     params.require(:flight).permit(:airline, :flight_number, :departure_location, :arrival_location,
       :departure_date, :arrival_date, :departure_time, :arrival_time,
-      :checked_bags, :cost, :booked)
+      :checked_bags, :cost, :booked, :confirmation_number)
   end
 
 end
