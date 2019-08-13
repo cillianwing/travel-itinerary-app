@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
     @user = User.find_by(id: session[:user_id]) || User.new
   end
 
+  def current_trip
+    @trip = Trip.find_by(id: params[:trip_id])
+  end
+
   def logged_in?
     current_user.id != nil
   end
@@ -21,6 +25,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  helper_method :current_user
+  helper_method :current_user, :current_trip
 
 end

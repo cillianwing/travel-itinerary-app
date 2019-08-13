@@ -15,6 +15,7 @@ class FlightsController < ApplicationController
   end
 
   def create
+    @trip = Trip.find_by(id: params[:trip_id])
     @flight = Flight.new(flight_params)
     if @flight.save
       redirect_to trip_flight_path(current_trip, @flight)
@@ -31,6 +32,9 @@ class FlightsController < ApplicationController
     @flight = Flight.find(params[:id])
     if @flight.update(flight_params)
       redirect_to trip_flight_path(current_trip, @flight)
+    else
+      render :edit
+    end
   end
 
   def destroy
