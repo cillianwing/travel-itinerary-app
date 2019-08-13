@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      redirect_to users_path(@user)
     else
       render :new
     end
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   def show
     if current_user.id != params[:id].to_i
-      redirect_to user_path(current_user), alert: "You cannot view another user's profile."
+      redirect_to users_path(current_user), alert: "You cannot view another user's profile."
     end
   end
 
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
-      redirect_to user_path(@user)
+      redirect_to users_path(@user)
     else
       render :edit
     end
