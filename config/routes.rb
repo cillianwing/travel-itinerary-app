@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     resources :trips
   end
 
-  resources :flights
+  resources :trips do
+    resources :flights
+  end
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
