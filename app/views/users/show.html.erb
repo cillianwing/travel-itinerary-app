@@ -4,24 +4,27 @@
   <%= link_to "Logout", logout_path, class: "logout" %>
 </div>
 
-<div class="row mt-3">
-  <div class="column img-title">Trips</div>
-  <!-- <div class="column img-title">Flights</div>
-  <div class="column img-title">Accommodations</div>
-  <div class="column img-title">Activities</div> -->
-</div>
+<body class="user-profile">
+  <div class="profile-form" >
 
-<div class="row">
-  <div class="img column"><%= link_to image_tag("trips.jpg"), user_trips_path(current_user) %></div>
-  <!-- <div class="img column"><#%= link_to image_tag("flying.jpg"), user_trips_path(current_user) %></div>
-  <div class="img column"><#%= link_to image_tag("hotel-pillows.jpg"), user_trips_path(current_user) %></div>
-  <div class="img column"><#%= link_to image_tag("hiking.jpg"), user_trips_path(current_user) %></div> -->
-</div>
+    <div class="profile-form-header p-0">
+      <%= link_to image_tag("travel-banner.png", class: "signup-form px-3"), login_path %>
+    </div>
 
-<!--
-  - link to all flights for the user
-  - link to all accommodations for the user
-  - link to all activities for the user
+    <% if flash[:alert] %>
+      <div class="flash flash-full flash-error"><%= flash[:alert] %></div>
+    <% end %>
 
-  - Format such that each option is a small box showing title, description and an image?
--->
+    <div class="profile-form-body mt-3">
+
+      <h2 class="input-block">Name: <%= "#{@user.name}" %></h2>
+      <h2 class="input-block">Biography: <%= "#{@user.biography}" %></h2>
+      <h2 class="input-block">Location: <%= "#{@user.location}" %></h2>
+      <h2 class="input-block">Username: <%= "#{@user.username}" %></h2>
+      <h2 class="input-block">Email: <%= "#{@user.email}" %></h2>
+
+      <%= button_to "Edit User", edit_user_path(@user), class: "btn btn-primary btn-block" %>
+
+    </div>
+  </div>
+</body>

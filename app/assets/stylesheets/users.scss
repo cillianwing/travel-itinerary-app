@@ -40,6 +40,46 @@
   text-shadow: none;
 }
 
+.profile-form-body {
+  background-color: #fff;
+  border: 1px solid #d8dee2;
+  border-radius: 0 0 3px 3px;
+  border-top: 0;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.user-profile .profile-form-body {
+    border-radius: 5px;
+    border-top: 1px solid #d8dee2;
+}
+
+.profile-form {
+  margin: 0 auto;
+  width: 340px;
+}
+
+.profile-form-header {
+  background-color: #829aa8;
+  border: 1px solid #768995;
+  border-radius: 3px 3px 0 0;
+  color: #fff;
+  margin: 0;
+  padding: 10px 20px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+  text-align: center;
+}
+
+.user-profile .profile-form-header {
+  background-color: transparent;
+  border: 0;
+  color: #333;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  text-align: center;
+  text-shadow: none;
+}
+
 .px-3 {
   padding-right: 16px!important;
 }
@@ -138,8 +178,10 @@ img:hover {
   width: 25%;
 }
 
-.column1 {
-  float: center;
+.column {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   width: 50%;
 }
 
@@ -202,6 +244,15 @@ img:hover {
 }
 
 .session-authentication .flash {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 13px;
+    margin: 0 auto 10px;
+    padding: 15px 20px;
+}
+
+.user-profile .flash {
     border-radius: 5px;
     border-style: solid;
     border-width: 1px;
