@@ -19,15 +19,6 @@
 
     <%= form_for @user do |f| %>
 
-    <%= f.label :name, "Name: " %>
-    <%= f.text_field :name, class: "form-control input-block" %><br />
-
-    <%= f.label :biography, "Biography: " %>
-    <%= f.text_area :biography, class: "form-control input-block" %><br />
-
-    <%= f.label :location, "Location: " %>
-    <%= f.text_field :location, class: "form-control input-block" %><br />
-
       <%= f.label :username, "Username: " %>
       <%= f.text_field :username, class: "form-control input-block" %><br />
 
@@ -39,6 +30,15 @@
 
       <%= f.label :password_confirmation, "Confirm Password: " %>
       <%= f.password_field :password_confirmation, class: "form-control input-block" %><br />
+
+      <%= f.label :name, "Name: " %>
+      <%= f.text_field :name, class: "form-control input-block" %><br />
+
+      <%= f.label :biography, "Biography: " %>
+      <%= f.text_area :biography, class: "form-control input-block" %><br />
+
+      <%= f.label :location, "Location: " %>
+      <%= f.text_field :location, class: "form-control input-block" %><br />
 
       <%= f.submit "Create User", class: "btn btn-primary btn-block" %>
 
