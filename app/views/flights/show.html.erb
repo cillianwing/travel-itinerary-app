@@ -1,1 +1,6 @@
-<%= @flight.airline %>
+<%= @flight.departure_location %> - <%= @flight.arrival_location %><br />
+<%= @flight.departure_time.strftime('%H:%M') %> - <%= @flight.arrival_time.strftime('%H:%M') %>
+
+<%= link_to "Back to Trip", user_trip_path(current_user, current_trip) %>
+
+<%= link_to "View All Trip Flights", trip_flights_path %>
