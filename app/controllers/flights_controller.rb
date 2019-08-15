@@ -15,8 +15,12 @@ class FlightsController < ApplicationController
   end
 
   def create
+    @trip = current_trip
     @flight = current_trip.flights.new(flight_params)
+    @flight.trip_ids << @trip.id
     if @flight.save
+      @flight.book_ticket(current_trip)
+      @flight.booked = true
       redirect_to trip_flight_path(current_trip, @flight)
     else
       render :new
@@ -44,7 +48,7 @@ class FlightsController < ApplicationController
   def flight_params
     params.require(:flight).permit(:airline, :flight_number, :departure_location, :arrival_location,
       :departure_date, :arrival_date, :departure_time, :arrival_time,
-      :checked_bags, :cost, :booked, :confirmation_number)
+      :checked_bags, :cost, :booked, :confirmation_number, :trip_id)
   end
 
   def set_flight

@@ -1,5 +1,13 @@
+<% if @flight.errors.any? %>
+  <div class="flash flash-full flash-error"><% @flight.errors.messages.each do |attr, message| %>
+    <%= attr %> <%= message[0] %><br />
+  <% end %></div>
+<% end %>
+
 <%= form_for @flight, url: trip_flights_path, action: 'post' do |f| %>
 
   <%= render partial: 'form', locals: { f: f } %>
+
+  <%= f.hidden_field :booked, value: false %>
 
 <% end %>
