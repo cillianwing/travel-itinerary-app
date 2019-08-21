@@ -3,7 +3,7 @@ class FlightsController < ApplicationController
   before_action :set_flight, only: [:show, :edit, :update, :destroy]
 
   def index
-    @flights = current_trip.flights
+    @flights = current_trip.flights.sort_by { |hash| hash[:departure_date] && hash[:departure_time] }
   end
 
   def show

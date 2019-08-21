@@ -11,5 +11,5 @@ class Flight < ApplicationRecord
     # method to be used once user enters a (booked) flight for a specific trip
     @ticket = Ticket.create(trip_id: trip.id, flight_id: self.id)
   end
-
-end 
+  
+end

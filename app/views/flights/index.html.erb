@@ -4,12 +4,47 @@
   <%= link_to "This Trip", user_trip_path(current_user, current_trip) %>
   <%= link_to "Logout", logout_path, class: "logout" %>
   <%= link_to "Profile", user_path(current_user), class: "logout" %>
-</div>
+</div><br />
 
-<% current_trip.flights.each do |flight| %>
-  <p><%= link_to "#{flight.departure_location} - #{flight.arrival_location}", trip_flight_path(current_trip, flight) %><br />
-  <%= flight.departure_date %> -> <%= flight.arrival_date %><br />
-  <%= flight.departure_time %> -> <%= flight.arrival_time %></p>
+<% @flights.each do |flight| %>
+  <div class="ticket">
+    <div class="main-ticket">
+      <div class="column-3"><%= "Airline: #{flight.airline}" %></div>
+      <div class="column-3"><%= "Flight #: #{flight.flight_number}" %></div>
+      <div class="column-3 bp-15"><%= "Confirmation #: #{flight.confirmation_number}" %></div><br />
+
+      <div class="column-3 title">Departure City</div>
+      <div class="column-3 title">Departure Date</div>
+      <div class="column-3 title">Departure Time</div>
+      <div class="column-3"><%= flight.departure_location %></div>
+      <div class="column-3"><%= flight.departure_date %></div>
+      <div class="column-3 bp-15"><%= flight.departure_time.strftime('%H:%M %p') %></div><br />
+
+      <div class="column-3 title">Arrival City</div>
+      <div class="column-3 title">Arrival Date</div>
+      <div class="column-3 title">Arrival Time</div>
+      <div class="column-3"><%= flight.arrival_location %></div>
+      <div class="column-3"><%= flight.arrival_date %></div>
+      <div class="column-3 bp-15"><%= flight.arrival_time.strftime('%H:%M %p') %></div><br />
+
+      <div class="column-2"><%= "Checked Bags: #{flight.checked_bags}" %></div>
+      <div class="column-2"><%= "Flight Cost: #{number_to_currency(flight.cost)}" %></div>
+
+      <h3 class="column-1"><%= "Passenger: #{current_user.name}" %></h3>
+
+      <div class="column-2"><%= link_to "Edit Flight", edit_trip_flight_path(current_trip, flight) %></div>
+      <div class="column-2"><%= link_to "Delete Flight", trip_flight_path(current_trip, flight), method: :delete, data: { confirm: "Are you sure you want to delete this flight?" } %></div>
+    </div>
+
+    <div class="small-ticket v1">
+      <div class="column-1 pl-5 bp-15"><%= "Flight #: #{flight.flight_number}" %></div>
+      <h2 class="column-1 pl-5"><%= current_user.name %></h2>
+      <div class="column-1 pl-5"><%= "#{flight.departure_location}" %></div>
+      <div class="column-1 pl-5">to</div>
+      <div class="column-1 pl-5"><%= "#{flight.arrival_location}" %></div>
+      <h3 class="column-1 pl-5">Departure Time<br /><%= flight.departure_time.strftime('%H:%M %p') %></h3>
+    </div>
+  </div><br />
 <% end %>
 
 <%= link_to "Add New Flight", new_trip_flight_path %>
