@@ -3,12 +3,37 @@
   <%= link_to "All Trips", user_trips_path(current_user) %>
   <%= link_to "Logout", logout_path, class: "logout" %>
   <%= link_to "Profile", user_path(current_user), class: "logout" %>
-</div>
+</div><br />
 
-<%= form_for @trip, url: user_trips_path, action: 'post' do |f| %>
+<body class="trip-creation">
+  <div class="trip-form">
 
-  <%= f.hidden_field :user_id, value: current_user.id %>
+    <div class="trip-form-header p-0">
+      <%= link_to image_tag("travel-banner.png", class: "trip-form px-3"), root_path %>
+    </div>
 
-  <%= render partial: 'form', locals: { f: f } %>
+    <% if flash[:alert] %>
+      <div class="flash flash-full flash-error"><%= flash[:alert] %></div>
+    <% end %>
 
-<% end %>
+    <% if @user.errors.any? %>
+      <div class="flash flash-full flash-error"><% @user.errors.messages.each do |attr, message| %>
+        <%= message[0] %><br />
+      <% end %></div>
+    <% end %>
+
+    <div class="trip-form-body mt-3">
+
+      <%= form_for @trip, url: user_trips_path, action: 'post' do |f| %>
+
+        <%= f.hidden_field :user_id, value: current_user.id %>
+
+        <%= render partial: 'form', locals: { f: f } %>
+
+        <%= f.submit "Create Trip", class: "btn btn-primary btn-block" %>
+
+      <% end %>
+
+    </div>
+  </div>
+</body>

@@ -11,21 +11,21 @@
     <div class="main-ticket">
       <div class="column-3"><%= "Airline: #{flight.airline}" %></div>
       <div class="column-3"><%= "Flight #: #{flight.flight_number}" %></div>
-      <div class="column-3 bp-15"><%= "Confirmation #: #{flight.confirmation_number}" %></div><br />
+      <div class="column-3 pb-15"><%= "Confirmation #: #{flight.confirmation_number}" %></div><br />
 
       <div class="column-3 title">Departure City</div>
       <div class="column-3 title">Departure Date</div>
       <div class="column-3 title">Departure Time</div>
       <div class="column-3"><%= flight.departure_location %></div>
       <div class="column-3"><%= flight.departure_date %></div>
-      <div class="column-3 bp-15"><%= flight.departure_time.strftime('%H:%M %p') %></div><br />
+      <div class="column-3 pb-15"><%= flight.departure_time.strftime('%H:%M %p') %></div><br />
 
       <div class="column-3 title">Arrival City</div>
       <div class="column-3 title">Arrival Date</div>
       <div class="column-3 title">Arrival Time</div>
       <div class="column-3"><%= flight.arrival_location %></div>
       <div class="column-3"><%= flight.arrival_date %></div>
-      <div class="column-3 bp-15"><%= flight.arrival_time.strftime('%H:%M %p') %></div><br />
+      <div class="column-3 pb-15"><%= flight.arrival_time.strftime('%H:%M %p') %></div><br />
 
       <div class="column-2"><%= "Checked Bags: #{flight.checked_bags}" %></div>
       <div class="column-2"><%= "Flight Cost: #{number_to_currency(flight.cost)}" %></div>
@@ -37,7 +37,7 @@
     </div>
 
     <div class="small-ticket v1">
-      <div class="column-1 pl-5 bp-15"><%= "Flight #: #{flight.flight_number}" %></div>
+      <div class="column-1 pl-5 pb-15"><%= "Flight #: #{flight.flight_number}" %></div>
       <h2 class="column-1 pl-5"><%= current_user.name %></h2>
       <div class="column-1 pl-5"><%= "#{flight.departure_location}" %></div>
       <div class="column-1 pl-5">to</div>

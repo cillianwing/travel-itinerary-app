@@ -3,12 +3,14 @@
   <%= link_to "All Trips", user_trips_path(current_user) %>
   <%= link_to "Logout", logout_path, class: "logout" %>
   <%= link_to "Profile", user_path(current_user), class: "logout" %>
-</div>
+</div><br />
 
 <%= form_for @trip, url: user_trip_path, action: 'patch' do |f| %>
 
   <%= f.hidden_field :user_id %>
 
   <%= render partial: 'form', locals: { f: f } %>
+
+  <%= f.submit "Edit Trip", class: "btn btn-primary btn-block" %>
 
 <% end %>
