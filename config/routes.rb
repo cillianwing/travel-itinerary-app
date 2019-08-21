@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :trips do
     resources :flights
+    resources :activities
   end
 
   get '/login', to: 'sessions#new'
