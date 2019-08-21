@@ -14,6 +14,8 @@ module TripsHelper
           errors.add(:start_date, "cannot be during an existing trip")
         elsif end_date > trip.start_date && end_date < trip.end_date
           errors.add(:end_date, "cannot be during an existing trip")
+        elsif start_date < trip.start_date && end_date > trip.end_date
+          errors.add(:trip_dates, "Trip dates cannot be overlapping with an existing Trip.")
         end
       end
     end
