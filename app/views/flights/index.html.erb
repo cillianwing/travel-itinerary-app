@@ -1,6 +1,15 @@
+<div class="topnav" id="myTopnav">
+  <%= link_to "Home", users_path %>
+  <%= link_to "All Trips", user_trips_path(current_user) %>
+  <%= link_to "This Trip", user_trip_path(current_user, current_trip) %>
+  <%= link_to "Logout", logout_path, class: "logout" %>
+  <%= link_to "Profile", user_path(current_user), class: "logout" %>
+</div>
+
 <% current_trip.flights.each do |flight| %>
+  <p><%= link_to "#{flight.departure_location} - #{flight.arrival_location}", trip_flight_path(current_trip, flight) %><br />
   <%= flight.departure_date %> -> <%= flight.arrival_date %><br />
-  <%= flight.departure_time %> -> <%= flight.arrival_time %><br /><br />
+  <%= flight.departure_time %> -> <%= flight.arrival_time %></p>
 <% end %>
 
 <%= link_to "Add New Flight", new_trip_flight_path %>

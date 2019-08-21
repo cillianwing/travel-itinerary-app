@@ -1,6 +1,14 @@
+<div class="topnav" id="myTopnav">
+  <%= link_to "Home", users_path %>
+  <%= link_to "All Trips", user_trips_path(current_user) %>
+  <%= link_to "This Trip", user_trip_path(current_user, current_trip) %>
+  <%= link_to "Logout", logout_path, class: "logout" %>
+  <%= link_to "Profile", user_path(current_user), class: "logout" %>
+</div>
+
 <%= @flight.departure_location %> - <%= @flight.arrival_location %><br />
-<%= @flight.departure_time.strftime('%H:%M') %> - <%= @flight.arrival_time.strftime('%H:%M') %>
+<%= @flight.departure_time.strftime('%H:%M') %> - <%= @flight.arrival_time.strftime('%H:%M') %><br />
 
-<%= link_to "Back to Trip", user_trip_path(current_user, current_trip) %>
+<%= link_to "Edit Flight", edit_trip_flight_path(current_trip, @flight) %><br />
 
-<%= link_to "View All Trip Flights", trip_flights_path %>
+<%= link_to "Delete Flight", trip_flight_path(current_trip, @flight), method: :delete, data: { confirm: "Are you sure you want to delete this flight?" } %>
