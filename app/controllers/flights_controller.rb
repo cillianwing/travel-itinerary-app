@@ -3,8 +3,7 @@ class FlightsController < ApplicationController
   before_action :set_flight, only: [:show, :edit, :update, :destroy]
 
   def index
-    @trips = current_user.trips
-    @flights = @trips.collect { |trip| trip.flights }
+    @flights = current_trip.flights
   end
 
   def show

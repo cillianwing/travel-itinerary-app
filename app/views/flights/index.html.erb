@@ -1,1 +1,6 @@
+<% current_trip.flights.each do |flight| %>
+  <%= flight.departure_date %> -> <%= flight.arrival_date %><br />
+  <%= flight.departure_time %> -> <%= flight.arrival_time %><br /><br />
+<% end %>
+
 <%= link_to "Add New Flight", new_trip_flight_path %>

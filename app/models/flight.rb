@@ -12,4 +12,4 @@ class Flight < ApplicationRecord
     @ticket = Ticket.create(trip_id: trip.id, flight_id: self.id)
   end
 
-end
+end 
