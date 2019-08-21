@@ -11,7 +11,7 @@
 
     <% if @user.errors.any? %>
       <div class="flash flash-full flash-error"><% @user.errors.messages.each do |attr, message| %>
-        <%= message[0] %><br />
+        <%= message.first %><br />
       <% end %></div>
     <% end %>
 

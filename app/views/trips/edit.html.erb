@@ -16,9 +16,9 @@
       <div class="flash flash-full flash-error"><%= flash[:alert] %></div>
     <% end %>
 
-    <% if @user.errors.any? %>
-      <div class="flash flash-full flash-error"><% @user.errors.messages.each do |attr, message| %>
-        <%= message[0] %><br />
+    <% if @trip.errors.any? %>
+      <div class="flash flash-full flash-error"><% @trip.errors.messages.each do |attr, message| %>
+        <%= "#{attr.capitalize} #{message[0]}." %><br />
       <% end %></div>
     <% end %>
 
