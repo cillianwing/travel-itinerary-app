@@ -1,34 +1,32 @@
 <%= f.label :airline %><br />
-<%= f.text_field :airline %><br />
+<%= f.text_field :airline, class: "flight-form-control input-block" %><br />
 
 <%= f.label :flight_number %><br />
-<%= f.text_field :flight_number %><br />
+<%= f.text_field :flight_number, class: "flight-form-control input-block" %><br />
 
 <%= f.label :confirmation_number %><br />
-<%= f.text_field :confirmation_number %><br />
+<%= f.text_field :confirmation_number, class: "flight-form-control input-block" %><br />
 
 <%= f.label :departure_location %><br />
-<%= f.text_field :departure_location %><br />
+<%= f.text_field :departure_location, class: "flight-form-control input-block" %><br />
 
 <%= f.label :arrival_location %><br />
-<%= f.text_field :arrival_location %><br />
+<%= f.text_field :arrival_location, class: "flight-form-control input-block" %><br />
 
 <%= f.label :departure_date %><br />
-<%= f.date_field :departure_date %><br />
+<%= f.date_field :departure_date, min: Date.today, class: "flight-form-control input-block" %><br />
 
 <%= f.label :arrival_date %><br />
-<%= f.date_field :arrival_date %><br />
+<%= f.date_field :arrival_date, class: "flight-form-control input-block" %><br />
 
 <%= f.label :departure_time %> (ex. 11:45 AM)<br />
-<%= f.time_field :departure_time, value: "%H:%M" %><br />
+<%= f.time_field :departure_time, class: "flight-form-control input-block" %><br />
 
 <%= f.label :arrival_time %> (ex. 2:30 PM)<br />
-<%= f.time_field :arrival_time, value: "%H:%M" %><br />
+<%= f.time_field :arrival_time, class: "flight-form-control input-block" %><br />
 
 <%= f.label :checked_bags %><br />
-<%= f.number_field :checked_bags %><br />
+<%= f.number_field :checked_bags, class: "flight-form-control input-block" %><br />
 
-<%= f.label :cost %><br />
-<%= f.number_field :cost %><br />
-
-<%= f.submit %>
+<%= f.label :cost, "Cost ($)" %><br />
+<%= f.number_field :cost, value: number_to_currency(f.object.cost.to_f, delimiter: '', unit: ''), step: :any, class: "flight-form-control input-block" %><br />

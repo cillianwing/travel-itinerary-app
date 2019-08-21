@@ -6,6 +6,8 @@
   <%= link_to "Profile", user_path(current_user), class: "logout" %>
 </div><br />
 
+<%= link_to "Add New Flight", new_trip_flight_path %>
+
 <% @flights.each do |flight| %>
   <div class="ticket">
     <div class="main-ticket">
@@ -46,5 +48,3 @@
     </div>
   </div><br />
 <% end %>
-
-<%= link_to "Add New Flight", new_trip_flight_path %>

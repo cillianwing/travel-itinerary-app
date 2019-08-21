@@ -4,12 +4,38 @@
   <%= link_to "This Trip", user_trip_path(current_user, current_trip) %>
   <%= link_to "Logout", logout_path, class: "logout" %>
   <%= link_to "Profile", user_path(current_user), class: "logout" %>
-</div>
+</div><br />
 
-<%= form_for @flight, url: trip_flight_path, action: 'patch' do |f| %>
+<body class="flight-creation">
+  <div class="flight-form">
 
-  <%= render partial: 'form', locals: { f: f } %>
+    <div class="flight-form-header p-0">
+      <%= link_to image_tag("travel-banner.png", class: "flight-form px-3"), root_path %>
+    </div>
 
-  <%= f.hidden_field :booked, value: true %>
+    <% if flash[:alert] %>
+      <div class="flash flash-full flash-error"><%= flash[:alert] %></div>
+    <% end %>
 
-<% end %>
+    <% if @flight.errors.any? %>
+      <div class="flash flash-full flash-error"><% @flight.errors.messages.each do |attr, message| %>
+        <%= message.first %><br />
+      <% end %></div>
+    <% end %>
+
+    <div class="flight-form-body mt-3">
+
+
+      <%= form_for @flight, url: trip_flight_path, action: 'patch' do |f| %>
+
+        <%= render partial: 'form', locals: { f: f } %>
+
+        <%= f.hidden_field :booked, value: true %>
+
+        <%= f.submit "Update Flight", class: "btn btn-primary btn-block" %>
+
+      <% end %>
+
+    </div>
+  </div>
+</body>
