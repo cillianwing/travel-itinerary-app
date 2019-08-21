@@ -26,13 +26,13 @@
     -> May require a has_many, through for each
 
 3. Activity: name, description, location, cost, start_date, end_date, start_time, end_time, booked (boolean)
- - belongs_to :trip
+ - has_many :trips, through: :bookings
 
 4. Flight: airline, flight_number, confirmation_number departure_location, arrival_location, departure_date, arrival_date, departure_time, arrival_time, checked_bags, cost, booked (boolean)
- - belongs_to :trip
+ - has_many :trips, through: :tickets
 
 5. Accommodation: name, type, location, arrival_date, departure_date, check_in_time, check_out_time, cost, booked
- - belongs_to :trip
+ - has_many :trips, through: :reservations
 
 6. Companions: confirmed
  - belongs_to :trip

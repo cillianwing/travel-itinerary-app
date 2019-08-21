@@ -14,9 +14,8 @@ class FlightsController < ApplicationController
   end
 
   def create
-    @trip = current_trip
     @flight = current_trip.flights.new(flight_params)
-    @flight.trip_ids << @trip.id
+    @flight.trip_ids << current_trip.id
     if @flight.save
       @flight.book_ticket(current_trip)
       @flight.booked = true
