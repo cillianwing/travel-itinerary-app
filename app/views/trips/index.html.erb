@@ -1,3 +1,9 @@
+<div class="topnav" id="myTopnav">
+  <%= link_to "Home", users_path %>
+  <%= link_to "Logout", logout_path, class: "logout" %>
+  <%= link_to "Profile", user_path(current_user), class: "logout" %>
+</div>
+
 <% @trips.each do |trip| %>
   <p><%= link_to "#{trip.name}", user_trip_path(current_user, trip) %> | <%= trip.description %> | <%= trip.start_date %> thru <%= trip.end_date %> </p>
 <% end %>
