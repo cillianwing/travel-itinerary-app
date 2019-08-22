@@ -18,7 +18,7 @@ class FlightsController < ApplicationController
     @flight.trip_ids << current_trip.id
     if @flight.save
       @flight.book_ticket(current_trip)
-      @flight.booked = true
+      current_trip.update_total(@flight.cost)
       redirect_to trip_flight_path(current_trip, @flight)
     else
       render :new

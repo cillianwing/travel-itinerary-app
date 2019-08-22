@@ -29,7 +29,7 @@
 
         <%= render partial: 'form', locals: { f: f } %>
 
-        <%= f.hidden_field :booked, value: false %>
+        <%= f.hidden_field :booked, value: true %>
 
         <%= f.submit "Create Flight", class: "btn btn-primary btn-block" %>
 
