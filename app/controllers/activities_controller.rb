@@ -18,7 +18,7 @@ class ActivitiesController < ApplicationController
     @activity.trip_ids << current_trip.id
     if @activity.save
       @activity.complete_booking(current_trip)
-      @activity.booked = true
+      current_trip.update_total(@activity.cost)
       redirect_to trip_activity_path(current_trip, @activity)
     else
       render :new
@@ -44,7 +44,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :description, :location, :cost, :start_date, :end_date, :start_time, :end_time)
+    params.require(:activity).permit(:name, :description, :location, :cost, :start_date, :end_date, :start_time, :end_time, :booked)
   end
 
   def set_activity
