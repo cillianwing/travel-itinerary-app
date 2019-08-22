@@ -14,4 +14,8 @@ class Trip < ApplicationRecord
     self.update(total_cost: self.total_cost += expense)
   end
 
+  def subtract_total(expense)
+    self.update(total_cost: self.total_cost -= expense)
+  end
+
 end

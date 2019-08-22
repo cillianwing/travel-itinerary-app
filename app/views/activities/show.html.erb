@@ -15,7 +15,7 @@
   <div class="column-3 title">Cost</div>
   <div class="column-3"><%= @activity.name %></div>
   <div class="column-3"><%= @activity.location %></div>
-  <div class="column-3 pb-5"><%= @activity.cost %></div><br />
+  <div class="column-3 pb-5"><%= number_to_currency(@activity.cost) %></div><br />
 
   <div class="column-1 title">Description</div>
   <div class="column-1 description-area"><%= @activity.description %></div>

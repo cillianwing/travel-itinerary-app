@@ -37,6 +37,7 @@ class FlightsController < ApplicationController
   end
 
   def destroy
+    current_trip.subtract_total(@flight.cost)
     @flight.destroy
     redirect_to trip_flights_path(current_trip)
   end

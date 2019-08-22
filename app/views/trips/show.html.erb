@@ -10,6 +10,7 @@
 <p>Travel Dates: <%= @trip.start_date %> -> <%= @trip.end_date %></p>
 
 <%= link_to "Flights for this trip", trip_flights_path(@trip) %><br />
+<%= link_to "Activities for this trip", trip_activities_path(@trip) %><br />
 
 <%= link_to "Edit Trip", edit_user_trip_path %><br />
 

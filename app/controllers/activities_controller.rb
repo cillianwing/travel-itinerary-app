@@ -37,6 +37,7 @@ class ActivitiesController < ApplicationController
   end
 
   def destroy
+    current_trip.subtract_total(@activity.cost)
     @activity.destroy
     redirect_to trip_activities_path(current_trip)
   end
