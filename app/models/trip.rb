@@ -1,5 +1,6 @@
 class Trip < ApplicationRecord
   include TripsHelper
+  scope :past_trip, -> { where("end_date < ?", Date.today) }
   belongs_to :user
   has_many :tickets
   has_many :flights, through: :tickets
