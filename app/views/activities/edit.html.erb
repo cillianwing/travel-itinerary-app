@@ -1,0 +1,41 @@
+<div class="topnav" id="myTopnav">
+  <%= link_to "Home", users_path %>
+  <%= link_to "All Trips", user_trips_path(current_user) %>
+  <%= link_to "Current Trip", user_trip_path(current_user, current_trip) %>
+  <%= link_to "All Activites", trip_activities_path(current_trip) %>
+  <%= link_to "Logout", logout_path, class: "nav-right" %>
+  <%= link_to "Profile", user_path(current_user), class: "nav-right" %>
+</div><br />
+
+<body class="activity-creation">
+  <div class="activity-form">
+
+    <div class="activity-form-header p-0">
+      <%= link_to image_tag("travel-banner.png", class: "activity-form px-3"), root_path %>
+    </div>
+
+    <% if flash[:alert] %>
+      <div class="flash flash-full flash-error"><%= flash[:alert] %></div>
+    <% end %>
+
+    <% if @activity.errors.any? %>
+      <div class="flash flash-full flash-error"><% @activity.errors.messages.each do |attr, message| %>
+        <%= message.first %><br />
+      <% end %></div>
+    <% end %>
+
+    <div class="activity-form-body mt-3">
+
+      <%= form_for @activity, url: trip_activity_path, action: 'patch' do |f| %>
+
+        <%= render partial: 'form', locals: { f: f } %>
+
+        <%= f.hidden_field :booked, value: true %>
+
+        <%= f.submit "Edit Activity", class: "btn btn-primary btn-block" %>
+
+      <% end %>
+
+    </div>
+  </div>
+</body>
