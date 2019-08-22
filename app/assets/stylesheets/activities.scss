@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .voucher {
   width: 40%;
-  height: 200px;
+  height: 300px;
   border: 5px solid green;
   border-radius: 25px;
   padding: 5px;
@@ -26,6 +26,11 @@
   width: 100%;
   float: left;
   text-align: center;
+}
+
+.description-area {
+  height: 75px;
+  overflow: hidden;
 }
 
 .title {
@@ -181,6 +186,10 @@ textarea {
 
 .pb-15 {
   padding-bottom: 15px;
+}
+
+.pb-5 {
+  padding-bottom: 5px;
 }
 
 .pl-5 {

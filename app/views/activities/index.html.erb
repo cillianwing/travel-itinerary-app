@@ -15,20 +15,20 @@
     <div class="column-3 title">Cost</div>
     <div class="column-3"><%= activity.name %></div>
     <div class="column-3"><%= activity.location %></div>
-    <div class="column-3 pb-15"><%= activity.cost %></div><br />
+    <div class="column-3 pb-5"><%= activity.cost %></div><br />
 
     <div class="column-1 title">Description</div>
-    <div class="column-1"><%= activity.description %></div>
+    <div class="column-1 description-area"><%= activity.description %></div>
 
     <div class="column-2 title">Start Date</div>
     <div class="column-2 title">End Date</div>
     <div class="column-2"><%= activity.start_date %></div>
-    <div class="column-2"><%= activity.end_date %></div>
+    <div class="column-2 pb-15"><%= activity.end_date %></div>
 
     <div class="column-2 title">Start Time</div>
     <div class="column-2 title">End Time</div>
     <div class="column-2"><%= activity.start_time %></div>
-    <div class="column-2"><%= activity.end_time %></div>
+    <div class="column-2 pb-15"><%= activity.end_time %></div>
 
     <div class="column-2"><%= link_to "Edit Activity", edit_trip_activity_path(current_trip, activity) %></div>
     <div class="column-2"><%= link_to "Delete Activity", trip_activity_path(current_trip, activity), method: :delete, data: { confirm: "Are you sure you want to delete this activity?" } %></div>
