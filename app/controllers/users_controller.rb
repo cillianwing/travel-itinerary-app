@@ -23,6 +23,7 @@ class UsersController < ApplicationController
     if current_user.id != params[:id].to_i
       redirect_to users_path, alert: "You cannot view another user's profile."
     end
+    @past_trips = Trip.past_trips
   end
 
   def edit
