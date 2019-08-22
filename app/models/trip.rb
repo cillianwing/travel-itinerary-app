@@ -8,7 +8,6 @@ class Trip < ApplicationRecord
   validate :start_date_before_end_date, :date_confirm
 
   def update_total(expense)
-    binding.pry
     self.update(total_cost: self.total_cost += expense)
   end
 

@@ -6,6 +6,9 @@
   <%= link_to "Profile", user_path(current_user), class: "logout" %>
 </div><br />
 
+<%= link_to "Add New Flight", new_trip_flight_path %><br />
+<%= link_to "All Flights", trip_flights_path %>
+
 <div class="ticket">
   <div class="main-ticket">
     <div class="column-3"><%= "Airline: #{@flight.airline}" %></div>
