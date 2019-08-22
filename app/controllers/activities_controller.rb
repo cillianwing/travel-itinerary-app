@@ -1,6 +1,5 @@
 class ActivitiesController < ApplicationController
   include ActivitiesHelper
-  scope :booked, -> { where(booked: true) }
   before_action :require_login
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
