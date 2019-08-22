@@ -6,6 +6,8 @@ class Trip < ApplicationRecord
   has_many :flights, through: :tickets
   has_many :bookings
   has_many :activities, through: :bookings
+  has_many :reservations
+  has_many :accommodations, through: :reservations
 
   validates :name, :description, :start_date, :end_date, presence: true
   validate :start_date_before_end_date, :date_confirm
