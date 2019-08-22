@@ -14,6 +14,10 @@
       <div class="flash flash-full flash-error"><%= flash[:alert] %></div>
     <% end %>
 
+    <% if flash[:message] %>
+      <div class="flash flash-full flash-message"><%= flash[:message] %></div>
+    <% end %>
+
     <div class="profile-form-body mt-3">
 
       <p class="input-block">Name: <%= "#{@user.name}" %><p>
