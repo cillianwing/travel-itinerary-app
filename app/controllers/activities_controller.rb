@@ -1,5 +1,4 @@
 class ActivitiesController < ApplicationController
-  include ActivitiesHelper
   before_action :require_login
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
