@@ -121,3 +121,112 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.form {
+  margin: 0 auto;
+  width: 350px;
+}
+
+.form-header {
+  background-color: #829aa8;
+  border: 1px solid #768995;
+  border-radius: 3px 3px 0 0;
+  color: #fff;
+  margin: 0;
+  padding: 10px 20px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+  text-align: center;
+}
+
+.creation .form-header {
+  background-color: transparent;
+  border: 0;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+  text-shadow: none;
+}
+
+.form-body {
+  background-color: #fff;
+  border: 1px solid #d8dee2;
+  border-radius: 0 0 3px 3px;
+  border-top: 0;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.creation .form-body {
+  border-radius: 5px;
+  border-top: 1px solid #d8dee2;
+}
+
+.form-control, .form-select {
+  background-color: #fff;
+  background-position: right 8px center;
+  background-repeat: no-repeat;
+  border: 1px solid #d1d5da;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 2px rgba(27,31,35,.075);
+  color: #24292e;
+  font-size: 16px;
+  line-height: 20px;
+  min-height: 34px;
+  outline: none;
+  padding: 6px 8px;
+  vertical-align: middle;
+}
+
+.input-block {
+  display: block;
+  width: 100%;
+}
+
+textarea {
+  width: 100%!important;
+}
+
+.btn-primary {
+  background-color: #28a745;
+  background-image: linear-gradient(-180deg,#34d058,#28a745 90%);
+  color: #fff;
+}
+
+.btn-block {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.btn {
+  -moz-appearance: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+  appearance: none;
+  background-position: -1px -1px;
+  background-repeat: repeat-x;
+  background-size: 110% 110%;
+  border: 1px solid rgba(27,31,35,.2);
+  border-radius: .25em;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 12px;
+  position: relative;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.creation .flash {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 13px;
+    margin: 0 auto 10px;
+    padding: 15px 20px;
+}

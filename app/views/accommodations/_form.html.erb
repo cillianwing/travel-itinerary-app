@@ -1,0 +1,26 @@
+<%= f.label :name %><br />
+<%= f.text_field :name, class: "form-control input-block" %><br />
+
+<%= f.label :type %><br />
+<%= f.text_field :type, class: "form-control input-block" %><br />
+
+<%= f.label :location %><br />
+<%= f.text_field :location, class: "form-control input-block" %><br />
+
+<%= f.label :address %><br />
+<%= f.text_field :address, class: "form-control input-block" %><br />
+
+<%= f.label :cost, "Cost ($)" %><br />
+<%= f.number_field :cost, value: number_to_currency(f.object.cost.to_f, delimiter: '', unit: ''), step: :any, class: "form-control input-block" %><br />
+
+<%= f.label :arrival_date %><br />
+<%= f.date_field :arrival_date, min: Date.today, class: "form-control input-block" %><br />
+
+<%= f.label :departure_date %><br />
+<%= f.date_field :departure_date, class: "form-control input-block" %><br />
+
+<%= f.label :check_in %><br />
+<%= f.time_field :check_in, class: "form-control input-block" %><br />
+
+<%= f.label :check_out %><br />
+<%= f.time_field :check_out, class: "form-control input-block" %><br />
