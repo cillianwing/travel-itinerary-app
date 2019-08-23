@@ -21,6 +21,7 @@ class AccommodationsController < ApplicationController
       current_trip.update_total(@accommodation.cost)
       redirect_to trip_accommodation_path(current_trip, @accommodation)
     else
+      @accommodation.trip_ids.pop
       render :new
     end
   end

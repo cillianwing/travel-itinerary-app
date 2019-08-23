@@ -21,6 +21,7 @@ class ActivitiesController < ApplicationController
       current_trip.update_total(@activity.cost)
       redirect_to trip_activity_path(current_trip, @activity)
     else
+      @activity.trip_ids.pop
       render :new
     end
   end

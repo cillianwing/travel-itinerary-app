@@ -21,6 +21,7 @@ class FlightsController < ApplicationController
       current_trip.update_total(@flight.cost)
       redirect_to trip_flight_path(current_trip, @flight)
     else
+      @flight.trip_ids.pop
       render :new
     end
   end
