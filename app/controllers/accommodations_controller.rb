@@ -46,7 +46,7 @@ class AccommodationsController < ApplicationController
   private
 
   def accommodation_params
-    params.require(:accommodation).permit(:name, :type, :location, :arrival_date, :departure_date, :check_in, :check_out, :cost, :address, :booked)
+    params.require(:accommodation).permit(:name, :accommodation_type, :location, :arrival_date, :departure_date, :check_in, :check_out, :cost, :address, :booked)
   end
 
   def set_accommodation
