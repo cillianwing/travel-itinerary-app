@@ -27,8 +27,8 @@
       <p class="input-block">Completed Trips: <%= "#{@past_trips.length}" %></p>
       <p class="input-block">Upcoming Planned Trips: <%= "#{@user.trips.count}" %></p>
       <p class="input-block">Booked Flights: <%= "#{@user.all_flights.length}" %></p>
-<!--      <p class="input-block">Booked Accommodations: <%#= "#{@user.all_accommodations.length}" %></p>
-      <p class="input-block">Booked Activities: <%#= "#{@user.all_activities.length}" %></p> -->
+      <p class="input-block">Booked Accommodations: <%= "#{@user.all_accommodations.length}" %></p>
+      <p class="input-block">Booked Activities: <%= "#{@user.all_activities.length}" %></p>
       <p class="input-block">Cost of Upcoming Trips: <%= number_to_currency(current_user.all_trips_cost(current_user.trips)) %></p>
 
       <%= link_to '<button class="btn btn-primary btn-block" type="button">Edit User</button>'.html_safe, edit_user_path %><br /><br />

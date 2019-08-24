@@ -3,7 +3,8 @@ class AccommodationsController < ApplicationController
   before_action :set_accommodation, only: [:show, :edit, :update, :destroy]
 
   def index
-    @accommodations = current_trip.accommodations.sort_by { |hash| hash[:arrival] }
+    @accommodations = current_trip.accommodations.sort_by { |hash| hash[:arrival_date] }
+    binding.pry
   end
 
   def show

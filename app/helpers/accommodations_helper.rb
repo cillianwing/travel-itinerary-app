@@ -1,8 +1,8 @@
 module AccommodationsHelper
 
   def arrival_departure_confirm
-    if departure_date > arrival_date
-      errors.add(:departure_date, "cannot be after arrival date")
+    if arrival_date > departure_date
+      errors.add(:arrival_date, "cannot be after departure date")
     end
   end
 
