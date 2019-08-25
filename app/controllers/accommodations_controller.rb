@@ -4,7 +4,6 @@ class AccommodationsController < ApplicationController
 
   def index
     @accommodations = current_trip.accommodations.sort_by { |hash| hash[:arrival_date] }
-    binding.pry
   end
 
   def show
