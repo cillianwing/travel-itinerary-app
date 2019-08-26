@@ -162,23 +162,6 @@
   text-align: center;
 }
 
-img {
-  border: 1px solid #ddd; /* Gray border */
-  border-radius: 4px;  /* Rounded border */
-  padding: 5px; /* Some padding */
-  width: 100%; /* Set a small width */
-}
-
-.img-title {
-  font-weight: bold;
-  font-size: 20px;
-  text-align: center;
-}
-
-img:hover {
-  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-}
-
 .column4 {
   float: left;
   width: 25%;
@@ -250,10 +233,11 @@ img:hover {
 }
 
 div.gallery {
-  margin: auto;
+  margin: 0.25%;
+  width: 24.5%;
+  float: left;
   border: 1px solid #ccc;
-  width: 40%;
-  display: inline-block;
+  border-radius: 5px;
 }
 
 div.gallery:hover {
@@ -262,10 +246,36 @@ div.gallery:hover {
 
 div.gallery img {
   width: 100%;
-  height: auto;
+  padding: 5px;
 }
 
 div.desc {
   padding: 15px;
   text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.gallery:hover .dropdown-content {
+  display: block;
 }
