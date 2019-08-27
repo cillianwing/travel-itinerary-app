@@ -13,10 +13,6 @@ class User < ApplicationRecord
     #returns instance of user that was found or just created
   end
 
-  def upcoming_trips
-    trips = self.trips.where("start_date >= ?", Date.today).order(:start_date)
-  end
-
   def upcoming_flights
     trips = self.trips.where("start_date >= ?", Date.today)
     flights = trips.collect { |trip| trip.flights }.flatten

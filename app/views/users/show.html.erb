@@ -26,13 +26,13 @@
       <p class="input-block">Biography: <%= @user.biography %></p>
       <p class="input-block">Location: <%= @user.location %></p>
       <p class="input-block">Email: <%= @user.email %></p>
-      <p class="input-block">Completed Trips: <%= @past_trips.length %></p>
-      <p class="input-block">Cost of Completed Trips: <%= number_to_currency(@user.trips_cost(@past_trips)) %></p>
-      <p class="input-block">Upcoming Planned Trips: <%= @user.trips.count %></p>
+      <p class="input-block">Completed Trips: <%= @user.trips.past_trips.length %></p>
+      <p class="input-block">Cost of Completed Trips: <%= number_to_currency(@user.trips_cost(@user.trips.past_trips)) %></p>
+      <p class="input-block">Upcoming Planned Trips: <%= @user.trips.upcoming_trips.count %></p>
       <p class="input-block">Booked Flights: <%= @user.upcoming_flights.length %></p>
       <p class="input-block">Booked Accommodations: <%= @user.upcoming_accommodations.length %></p>
       <p class="input-block">Booked Activities: <%= @user.upcoming_activities.length %></p>
-      <p class="input-block">Cost of Upcoming Trips: <%= number_to_currency(@user.trips_cost(@user.upcoming_trips)) %></p>
+      <p class="input-block">Cost of Upcoming Trips: <%= number_to_currency(@user.trips_cost(@user.trips.upcoming_trips)) %></p>
 
       <%= link_to '<button class="btn btn-primary btn-block" type="button">Edit User</button>'.html_safe, edit_user_path %><br /><br />
 
