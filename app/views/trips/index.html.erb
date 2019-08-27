@@ -9,4 +9,53 @@
   <p><%= link_to "#{trip.name}", user_trip_path(current_user, trip) %> | <%= trip.description %> | <%= trip.start_date %> thru <%= trip.end_date %> </p>
 <% end %>
 
-<%= link_to "Create New Trip", new_user_trip_path %>
+<%= link_to "Create New Trip", new_user_trip_path %><br /><br />
+
+<div class="thumbnail-grid">
+  <% @trips.each do |trip| %>
+    <div class="gallery-small">
+      <div class="thumbnail-desc">
+        <%= link_to "<button class='btn btn-primary btn-block', style='font-weight: normal' type='button'>
+          #{trip.name}<br />
+          Dates: #{trip.start_date} - #{trip.end_date}<br />
+        </button>".html_safe, user_trip_path(current_user, trip) %>
+      </div>
+      <%= link_to image_tag("trips.jpg"), user_trips_path(current_user) %>
+    </div>
+  <% end %>
+
+  <div class="gallery-small">
+    <div class="desc">Flights for Each Trip</div>
+    <%= link_to image_tag("flying.jpg"), user_trips_path(current_user) %>
+  </div>
+
+  <div class="gallery-small">
+    <div class="desc">Activities for Each Trip</div>
+    <%= link_to image_tag("hiking.jpg"), user_trips_path(current_user) %>
+  </div>
+
+  <div class="gallery-small">
+    <div class="desc">Accommodations for Each Trip</div>
+    <%= link_to image_tag("hotel-pillows.jpg"), user_trips_path(current_user) %>
+  </div>
+
+  <div class="gallery-small">
+    <div class="desc">View All Upcoming Trips</div>
+    <%= link_to image_tag("trips.jpg"), user_trips_path(current_user) %>
+  </div>
+
+  <div class="gallery-small">
+    <div class="desc">Flights for Each Trip</div>
+    <%= link_to image_tag("flying.jpg"), user_trips_path(current_user) %>
+  </div>
+
+  <div class="gallery-small">
+    <div class="desc">Activities for Each Trip</div>
+    <%= link_to image_tag("hiking.jpg"), user_trips_path(current_user) %>
+  </div>
+
+  <div class="gallery-small">
+    <div class="desc">Accommodations for Each Trip</div>
+    <%= link_to image_tag("hotel-pillows.jpg"), user_trips_path(current_user) %>
+  </div>
+</div>
