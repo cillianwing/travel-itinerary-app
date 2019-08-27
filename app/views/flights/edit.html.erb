@@ -5,6 +5,7 @@
   <%= link_to "All Flights", trip_flights_path(current_trip) %>
   <%= link_to "Logout", logout_path, class: "nav-right" %>
   <%= link_to "Profile", user_path(current_user), class: "nav-right" %>
+  <%= link_to "Past Trips", past_trips_path(current_user), class: "nav-right", style: "background: orange" %>
 </div><br />
 
 <body class="flight-creation">
