@@ -5,7 +5,7 @@
   <%= link_to "All Accommodations", trip_accommodations_path(current_trip) %>
   <%= link_to "Logout", logout_path, class: "nav-right" %>
   <%= link_to "Profile", user_path(current_user), class: "nav-right" %>
-  <%= link_to "Past Trips", past_trips_path(current_user), class: "nav-right", style: "background: orange" %>
+  <%= link_to "Past Trips", past_trips_path(@user), class: "nav-right" %>
 </div><br />
 
 <body class="creation">

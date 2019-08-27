@@ -2,7 +2,7 @@
   <%= link_to "Home", users_path %>
   <%= link_to "Upcoming Trips", user_trips_path(@user) %>
   <%= link_to "Logout", logout_path, class: "nav-right" %>
-  <%= link_to "Past Trips", past_trips_path(@user), class: "nav-right", style: "background: orange" %>
+  <%= link_to "Past Trips", past_trips_path(@user), class: "nav-right" %>
 </div><br />
 
 <body class="user-profile">
@@ -13,11 +13,11 @@
     </div>
 
     <% if flash[:alert] %>
-      <div class="flash flash-full flash-error"><%= flash[:alert] %></div>
+      <div class="flash flash-full flash-error", style="text-align: center"><%= flash[:alert] %></div>
     <% end %>
 
     <% if flash[:success] %>
-      <div class="flash flash-full flash-success"><%= flash[:success] %></div>
+      <div class="flash flash-full flash-success", style="text-align: center"><%= flash[:success] %></div>
     <% end %>
 
     <div class="profile-form-body mt-3">

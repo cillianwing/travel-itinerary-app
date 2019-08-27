@@ -4,7 +4,7 @@
   <%= link_to "Current Trip", user_trip_path(current_user, current_trip) %>
   <%= link_to "Logout", logout_path, class: "nav-right" %>
   <%= link_to "Profile", user_path(current_user), class: "nav-right" %>
-  <%= link_to "Past Trips", past_trips_path(current_user), class: "nav-right", style: "background: orange" %>
+  <%= link_to "Past Trips", past_trips_path(@user), class: "nav-right" %>
   <%= link_to "Add New Activity", new_trip_activity_path, class: "nav-right", style: "background: blue" %>
 </div><br />
 

@@ -3,7 +3,7 @@
   <%= link_to "Upcoming Trips", user_trips_path(current_user) %>
   <%= link_to "Logout", logout_path, class: "nav-right" %>
   <%= link_to "Profile", user_path(current_user), class: "nav-right" %>
-  <%= link_to "Past Trips", past_trips_path(current_user), class: "nav-right", style: "background: orange" %>
+  <%= link_to "Past Trips", past_trips_path(@user), class: "nav-right" %>
   <%= link_to "Create New Trip", new_user_trip_path, class: "nav-right", style: "background: blue" %>
 </div>
 
