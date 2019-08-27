@@ -11,25 +11,45 @@
 
 <div class="row">
   <div class="gallery">
-    <div class="desc">Trips</div>
-    <%= link_to image_tag("trips.jpg"), user_trips_path(current_user) %>
-    <div class="dropdown-content">Test Dropdown</div>
-    <div class="dropdown-content">Test Dropdown</div>
-    <div class="dropdown-content">Test Dropdown</div>
+    <div class="desc">View All Upcoming Trips</div>
+    <%= link_to image_tag("trips.jpg"), user_trips_path(current_user), class: "dropdown" %>
+    <div class="dropdown-content">
+      <% current_user.trips.each do |trip| %>
+        <%= link_to "<button class='btn btn-primary btn-block' type='button'>#{trip.name}</button>".html_safe, user_trip_path(current_user, trip) %>
+      <% end %>
+    </div>
   </div>
 
   <div class="gallery">
-    <div class="desc">Flights</div>
+    <div class="desc">Flights for Each Trip</div>
     <%= link_to image_tag("flying.jpg"), user_trips_path(current_user) %>
+    <div class="dropdown-content">
+      <div style="font-weight: bold; padding-bottom: 5px">Which trip would you like to view flights for?</div>
+      <% current_user.trips.each do |trip| %>
+        <%= link_to "<button class='btn btn-primary btn-block' type='button'>#{trip.name}</button>".html_safe, trip_flights_path(trip) %>
+      <% end %>
+    </div>
   </div>
 
   <div class="gallery">
-    <div class="desc">Activities</div>
+    <div class="desc">Activities for Each Trip</div>
     <%= link_to image_tag("hiking.jpg"), user_trips_path(current_user) %>
+    <div class="dropdown-content">
+      <div style="font-weight: bold; padding-bottom: 5px">Which trip would you like to view activities for?</div>
+      <% current_user.trips.each do |trip| %>
+        <%= link_to "<button class='btn btn-primary btn-block' type='button'>#{trip.name}</button>".html_safe, trip_activities_path(trip) %>
+      <% end %>
+    </div>
   </div>
 
   <div class="gallery">
-    <div class="desc">Accommodations</div>
+    <div class="desc">Accommodations for Each Trip</div>
     <%= link_to image_tag("hotel-pillows.jpg"), user_trips_path(current_user) %>
+    <div class="dropdown-content">
+      <div style="font-weight: bold; padding-bottom: 5px">Which trip would you like to view accommodations for?</div>
+      <% current_user.trips.each do |trip| %>
+        <%= link_to "<button class='btn btn-primary btn-block' type='button'>#{trip.name}</button>".html_safe, trip_accommodations_path(trip) %>
+      <% end %>
+    </div>
   </div>
 </div>
