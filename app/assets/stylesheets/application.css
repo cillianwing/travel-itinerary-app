@@ -72,7 +72,7 @@ body {
 }
 
 /* Add an active class to highlight the current page */
-.topnav a.active {
+.topnav a:active {
   background-color: red;
 }
 
@@ -258,4 +258,9 @@ textarea {
 .flash-error {
     background-color: #ffdce0;
     color: #86181d;
+}
+
+.flash-success {
+    background-color: #8cfb9f;
+    color: #0e763f;
 }
