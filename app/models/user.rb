@@ -13,18 +13,22 @@ class User < ApplicationRecord
     #returns instance of user that was found or just created
   end
 
-  def all_flights
-    trips = self.trips
+  def upcoming_trips
+    trips = self.trips.where("start_date >= ?", Date.today).order(:start_date)
+  end
+
+  def upcoming_flights
+    trips = self.trips.where("start_date >= ?", Date.today)
     flights = trips.collect { |trip| trip.flights }.flatten
   end
 
-  def all_accommodations
-    trips = self.trips
+  def upcoming_accommodations
+    trips = self.trips.where("start_date >= ?", Date.today)
     accommodations = trips.collect { |trip| trip.accommodations }.flatten
   end
 
-  def all_activities
-    trips = self.trips
+  def upcoming_activities
+    trips = self.trips.where("start_date >= ?", Date.today)
     activities = trips.collect { |trip| trip.activities }.flatten
   end
 
