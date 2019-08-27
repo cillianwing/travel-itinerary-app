@@ -7,6 +7,7 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = current_trip.activities.sort_by { |hash| hash[:start_date] && hash[:start_time] }
+    flash.now[:alert] = "You currently do not have any activities booked." if @activities.size == 0
   end
 
   def new

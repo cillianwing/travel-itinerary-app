@@ -7,6 +7,10 @@
   <%= link_to "Add New Flight", new_trip_flight_path, class: "nav-right", style: "background: blue" %>
 </div><br />
 
+<% if flash[:alert] %>
+  <div class="flash flash-full flash-error", style="width: 300px; margin: auto; text-align: center"><%= flash[:alert] %></div>
+<% end %>
+
 <% @flights.each do |flight| %>
   <div class="ticket">
     <div class="main-ticket">

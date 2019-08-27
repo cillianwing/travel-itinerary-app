@@ -7,6 +7,10 @@
   <%= link_to "Add New Activity", new_trip_activity_path, class: "nav-right", style: "background: blue" %>
 </div><br />
 
+<% if flash[:alert] %>
+  <div class="flash flash-full flash-error", style="width: 300px; margin: auto; text-align: center"><%= flash[:alert] %></div>
+<% end %>
+
 <% @activities.each do |activity| %>
   <div class="voucher">
     <div class="column-3 title">Activity</div>

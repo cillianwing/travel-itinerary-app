@@ -4,6 +4,7 @@ class AccommodationsController < ApplicationController
 
   def index
     @accommodations = current_trip.accommodations.sort_by { |hash| hash[:arrival_date] }
+    flash.now[:alert] = "You currently do not have any accommodations booked." if @accommodations.size == 0
   end
 
   def show

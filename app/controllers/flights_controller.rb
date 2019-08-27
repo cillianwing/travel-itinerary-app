@@ -4,6 +4,7 @@ class FlightsController < ApplicationController
 
   def index
     @flights = current_trip.flights.sort_by { |hash| hash[:departure_date] && hash[:departure_time] }
+    flash.now[:alert] = "You currently do not have any flights booked." if @flights.size == 0
   end
 
   def show

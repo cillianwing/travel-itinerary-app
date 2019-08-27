@@ -7,6 +7,10 @@
   <%= link_to "Add New Accommodation", new_trip_accommodation_path, class: "nav-right", style: "background: blue" %>
 </div><br />
 
+<% if flash[:alert] %>
+  <div class="flash flash-full flash-error", style="width: 300px; margin: auto; text-align: center"><%= flash[:alert] %></div>
+<% end %>
+
 <% @accommodations.each do |accommodation| %>
   <div class="reservation" >
     <div class="column-4 title">Name</div>
