@@ -5,9 +5,8 @@
   <%= link_to "All Accommodations", trip_accommodations_path(current_trip) %>
   <%= link_to "Logout", logout_path, class: "nav-right" %>
   <%= link_to "Profile", user_path(current_user), class: "nav-right" %>
+  <%= link_to "Add New Accommodation", new_trip_accommodation_path, class: "nav-right", style: "background: blue" %>
 </div><br />
-
-<%= link_to "Add New Accommodation", new_trip_accommodation_path %>
 
 <div class="reservation" >
   <div class="column-4 title">Name</div>

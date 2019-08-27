@@ -5,9 +5,8 @@
   <%= link_to "All Flights", trip_flights_path(current_trip) %>
   <%= link_to "Logout", logout_path, class: "nav-right" %>
   <%= link_to "Profile", user_path(current_user), class: "nav-right" %>
+  <%= link_to "Add New Flight", new_trip_flight_path, class: "nav-right", style: "background: blue" %>
 </div><br />
-
-<%= link_to "Add New Flight", new_trip_flight_path %><br />
 
 <div class="ticket">
   <div class="main-ticket">
