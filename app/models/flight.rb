@@ -1,5 +1,6 @@
 class Flight < ApplicationRecord
   include FlightsHelper
+  scope :past_flights, -> { where("arrival_date < ?", Date.today) }
   has_many :tickets
   has_many :trips, through: :tickets
 

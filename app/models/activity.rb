@@ -1,5 +1,6 @@
 class Activity < ApplicationRecord
   include ActivitiesHelper
+  scope :past_activities, -> { where("end_date < ?", Date.today) }
   has_many :bookings
   has_many :trips, through: :bookings
 

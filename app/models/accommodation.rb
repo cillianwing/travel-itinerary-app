@@ -1,5 +1,6 @@
 class Accommodation < ApplicationRecord
   include AccommodationsHelper
+  scope :past_accommodations, -> { where("departure_date < ?", Date.today) }
   has_many :reservations
   has_many :trips, through: :reservations
 
