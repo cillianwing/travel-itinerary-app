@@ -12,6 +12,8 @@
   <div class="flash flash-full flash-error", style="width: 300px; margin: auto; text-align: center"><%= flash[:alert] %></div>
 <% end %>
 
+<h3 style="text-align: center">Flights for <%= current_trip.name %></h3>
+
 <% @flights.each do |flight| %>
   <div class="ticket">
     <div class="main-ticket">

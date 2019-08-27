@@ -12,6 +12,8 @@
   <div class="flash flash-full flash-error", style="width: 300px; margin: auto; text-align: center"><%= flash[:alert] %></div>
 <% end %>
 
+<h3 style="text-align: center">Activities for <%= current_trip.name %></h3>
+
 <% @activities.each do |activity| %>
   <div class="voucher">
     <div class="column-3 title">Activity</div>
@@ -19,7 +21,7 @@
     <div class="column-3 title">Cost</div>
     <div class="column-3"><%= activity.name %></div>
     <div class="column-3"><%= activity.location %></div>
-    <div class="column-3 pb-5"><%= number_to_currency(activity.cost) %></div><br />
+    <div class="column-3"><%= number_to_currency(activity.cost) %></div><br />
 
     <div class="column-1 title">Description</div>
     <div class="column-1 description-area"><%= activity.description %></div>

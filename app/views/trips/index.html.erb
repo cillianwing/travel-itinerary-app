@@ -9,6 +9,10 @@
 
 <h3 style="text-align: center">Upcoming Trips</h3>
 
+<% if flash[:alert] %>
+  <div class="flash flash-full flash-error", style="width: 300px; margin: auto; text-align: center"><%= flash[:alert] %></div>
+<% end %>
+
 <div class="thumbnail-grid", style="padding-top: 10px">
   <% @trips.each do |trip| %>
     <div class="gallery-small">
@@ -19,7 +23,7 @@
           End Date: #{trip.end_date}
         </button>".html_safe, user_trip_path(current_user, trip) %>
       </div>
-      <%= link_to image_tag(trip.select_image), user_trips_path(current_user) %>
+      <%= link_to image_tag(trip.select_image), user_trip_path(current_user, trip) %>
       <div class="thumbnail-desc", style="font-weight: normal">
         <%= trip.description %>
       </div>

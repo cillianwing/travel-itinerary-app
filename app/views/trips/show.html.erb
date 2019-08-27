@@ -15,7 +15,7 @@
     <div class="trip-details-body">
       <p class="input-block", style="text-align: center">Name:<br /><%= @trip.name %><p>
       <p class="input-block", style="text-align: center">Description:<br /><%= @trip.description %><p>
-      <p class="input-block", style="text-align: center">Dates:<br /><%= "#{@trip.start_date} -> #{@trip.end_date}" %><p>
+      <p class="input-block", style="text-align: center">Dates:<br /><%= "#{@trip.start_date} thru #{@trip.end_date}" %><p>
       <p class="input-block", style="text-align: center">Total Cost: <%= number_to_currency(@trip.total_cost) %><p>
       <p class="input-block", style="text-align: center">Flights: <%= @trip.flights.size %> |
         Activities: <%= @trip.activities.size %> |
