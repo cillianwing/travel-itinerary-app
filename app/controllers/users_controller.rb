@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @user = current_user
+    @upcoming_trips = @user.trips.upcoming_trips
   end
 
   def new
@@ -41,6 +42,7 @@ class UsersController < ApplicationController
 
   def past
     @trips = current_user.trips.past_trips
+    flash.now[:alert] = "You do not have any past trips." if @trips.size == 0
   end
 
   def destroy

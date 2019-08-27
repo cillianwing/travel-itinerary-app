@@ -4,7 +4,7 @@ class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update, :destroy]
 
   def index
-    @trips = current_user.upcoming_trips
+    @trips = current_user.trips.upcoming_trips
     flash.now[:alert] = "You currently do not have any trips booked." if @trips.size == 0
   end
 
