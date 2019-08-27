@@ -1,6 +1,6 @@
 <div class="topnav" id="myTopnav">
   <%= link_to "Home", users_path %>
-  <%= link_to "All Trips", user_trips_path(current_user) %>
+  <%= link_to "Upcoming Trips", user_trips_path(current_user) %>
   <%= link_to "Current Trip", user_trip_path(current_user, current_trip) %>
   <%= link_to "All Activites", trip_activities_path(current_trip) %>
   <%= link_to "Logout", logout_path, class: "nav-right" %>

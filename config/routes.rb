@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
   root 'sessions#new'
+  get '/users/:user_id/past_trips', to: 'users#past', as: :past_trips
   get '/auth/:provider/callback', to: 'sessions#create'
 
 end

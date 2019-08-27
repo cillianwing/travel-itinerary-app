@@ -39,6 +39,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def past
+    @trips = current_user.trips.past_trips
+  end
+
   def destroy
     @user = current_user
     @user.destroy

@@ -1,13 +1,12 @@
 <div class="topnav" id="myTopnav">
   <%= link_to "Home", users_path %>
   <%= link_to "Upcoming Trips", user_trips_path(current_user) %>
-  <%= link_to "Past Trips", past_trips_path(current_user), style: "background: orange" %>
   <%= link_to "Logout", logout_path, class: "nav-right" %>
   <%= link_to "Profile", user_path(current_user), class: "nav-right" %>
   <%= link_to "Create New Trip", new_user_trip_path, class: "nav-right", style: "background: blue" %>
 </div>
 
-<h3 style="text-align: center">Upcoming Trips</h3>
+<h3 style="text-align: center">Past Trips</h3>
 
 <div class="thumbnail-grid", style="padding-top: 10px">
   <% @trips.each do |trip| %>
