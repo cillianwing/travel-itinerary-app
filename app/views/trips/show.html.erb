@@ -5,19 +5,7 @@
   <%= link_to "Profile", user_path(current_user), class: "nav-right" %>
 </div>
 
-<p><%= @trip.name %></p>
-<p><%= @trip.description %></p>
-<p>Travel Dates: <%= @trip.start_date %> -> <%= @trip.end_date %></p>
-
-<%= link_to "Flights for this trip", trip_flights_path(@trip) %><br />
-<%= link_to "Activities for this trip", trip_activities_path(@trip) %><br />
-<%= link_to "Accommodations for this trip", trip_accommodations_path(@trip) %><br />
-
-<%= link_to "Edit Trip", edit_user_trip_path %><br />
-
-<%= link_to "Delete Trip", user_trip_path(current_user, @trip), method: :delete, data: { confirm: "Are you sure you want to delete this trip? This will delete all associated flights, activities, and accommodations." } %><br />
-
-<div class="trip-show-page">
+<div class="trip-show-page pt-5">
   <div class="trip-details">
     <div class="trip-details-header">
       <%= link_to image_tag(@trip.select_image), root_path %>
@@ -30,6 +18,32 @@
       <p class="input-block", style="text-align: center">Flights: <%= @trip.flights.size %> |
         Activities: <%= @trip.activities.size %> |
         Accommodations: <%= @trip.accommodations.size %><p>
+
+      <%= link_to '<button class="btn btn-primary btn-block" type="button">Edit Trip</button>'.html_safe, edit_user_trip_path %><br /><br />
+      <%= link_to '<button class="btn btn-primary-delete btn-block" type="button">Delete Trip</button>'.html_safe, user_trip_path(current_user, @trip), method: :delete, data: { confirm: "Are you sure you want to delete this trip? This will delete all associated flights, activities, and accommodations." } %><br />
+
     </div>
+
+  </div>
+</div>
+
+<div class="thumbnail-grid", style="padding-top: 10px">
+  <div class="gallery-small">
+    <div class="thumbnail-desc", style="height: 40px;">
+      <%= link_to "<button class='btn btn-primary btn-block', type='button'>Flights</button>".html_safe, trip_flights_path(@trip) %>
+    </div>
+    <%= link_to image_tag("flying.jpg"), trip_flights_path(@trip) %>
+  </div>
+  <div class="gallery-small">
+    <div class="thumbnail-desc", style="height: 40px;">
+      <%= link_to "<button class='btn btn-primary btn-block', type='button'>Activities</button>".html_safe, trip_activities_path(@trip) %>
+    </div>
+    <%= link_to image_tag("hiking.jpg"), trip_activities_path(@trip) %>
+  </div>
+  <div class="gallery-small">
+    <div class="thumbnail-desc", style="height: 40px;">
+      <%= link_to "<button class='btn btn-primary btn-block', type='button'>Accommodations</button>".html_safe, trip_accommodations_path(@trip) %>
+    </div>
+    <%= link_to image_tag("hotel-pillows.jpg"), trip_accommodations_path(@trip) %>
   </div>
 </div>

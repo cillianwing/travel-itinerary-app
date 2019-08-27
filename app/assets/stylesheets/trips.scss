@@ -68,6 +68,12 @@ textarea {
   width: 100%;
 }
 
+.btn-primary-delete {
+  background-color: #FF0000;
+  background-image: linear-gradient(-180deg,#B22222,#FF0000 90%);
+  color: #fff;
+}
+
 .btn {
   -moz-appearance: none;
   -moz-user-select: none;
@@ -181,7 +187,7 @@ div.thumbnail-desc {
 
 .trip-details {
   margin: auto;
-  width: 50%;
+  width: 40%;
 }
 
 .trip-details img {
