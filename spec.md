@@ -22,3 +22,8 @@ Confirm:
 - [x] Limited logic in controllers
 - [x] Views use helper methods if appropriate
 - [x] Views use partials if appropriate
+
+Additional:
+- [ ] Blog post about the project and the process
+- [ ] Video walkthrough
+- [ ] 30 minute coding session
