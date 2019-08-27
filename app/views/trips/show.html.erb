@@ -16,3 +16,20 @@
 <%= link_to "Edit Trip", edit_user_trip_path %><br />
 
 <%= link_to "Delete Trip", user_trip_path(current_user, @trip), method: :delete, data: { confirm: "Are you sure you want to delete this trip? This will delete all associated flights, activities, and accommodations." } %><br />
+
+<div class="trip-show-page">
+  <div class="trip-details">
+    <div class="trip-details-header">
+      <%= link_to image_tag(@trip.select_image), root_path %>
+    </div>
+    <div class="trip-details-body">
+      <p class="input-block", style="text-align: center">Name:<br /><%= @trip.name %><p>
+      <p class="input-block", style="text-align: center">Description:<br /><%= @trip.description %><p>
+      <p class="input-block", style="text-align: center">Dates:<br /><%= "#{@trip.start_date} -> #{@trip.end_date}" %><p>
+      <p class="input-block", style="text-align: center">Total Cost: <%= number_to_currency(@trip.total_cost) %><p>
+      <p class="input-block", style="text-align: center">Flights: <%= @trip.flights.size %> |
+        Activities: <%= @trip.activities.size %> |
+        Accommodations: <%= @trip.accommodations.size %><p>
+    </div>
+  </div>
+</div>

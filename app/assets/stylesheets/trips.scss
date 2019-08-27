@@ -7,23 +7,14 @@
 }
 
 .trip-form-header {
-  background-color: #829aa8;
+  background-color: transparent;
   border: 1px solid #768995;
   border-radius: 3px 3px 0 0;
   color: #fff;
-  margin: 0;
+  margin-bottom: 15px;
   padding: 10px 20px;
   text-shadow: 0 -1px 0 rgba(0,0,0,.3);
   text-align: center;
-}
-
-.trip-creation .trip-form-header {
-  background-color: transparent;
-  border: 0;
-  color: #333;
-  margin-bottom: 15px;
-  text-align: center;
-  text-shadow: none;
 }
 
 .trip-form-body {
@@ -181,9 +172,43 @@ div.gallery-small img {
 }
 
 div.thumbnail-desc {
-  padding: 15px;
+  padding: 5px 5px 5px 5px;
   text-align: center;
   font-size: 15px;
   font-weight: bold;
-  height: 90px;
+  height: 80px;
+}
+
+.trip-details {
+  margin: auto;
+  width: 50%;
+}
+
+.trip-details img {
+  width: 100%;
+  padding: 0;
+}
+
+.trip-details-header {
+  background-color: transparent;
+  border-top: 1px solid #768995;
+  border-left: 1px solid #768995;
+  border-right: 1px solid #768995;
+  border-radius: 3px 3px 0 0;
+  color: #fff;
+  margin: 0;
+  padding: 10px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+  text-align: center;
+}
+
+.trip-details-body {
+  background-color: #fff;
+  border-bottom: 1px solid #768995;
+  border-left: 1px solid #768995;
+  border-right: 1px solid #768995;
+  border-radius: 0 0 3px 3px;
+  border-top: 0;
+  font-size: 14px;
+  padding: 5px 10px 10px 10px;
 }
