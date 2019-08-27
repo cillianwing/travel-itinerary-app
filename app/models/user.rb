@@ -32,7 +32,7 @@ class User < ApplicationRecord
     activities = trips.collect { |trip| trip.activities }.flatten
   end
 
-  def all_trips_cost(trips)
+  def trips_cost(trips)
     trips.inject(0) {|sum, hash| sum + hash[:total_cost] }
   end
 
