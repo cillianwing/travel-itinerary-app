@@ -1,8 +1,8 @@
 <div class="topnav" id="myTopnav">
   <%= link_to "Home", users_path %>
-  <%= link_to "Upcoming Trips", user_trips_path(current_user) %>
+  <%= link_to "Upcoming Trips", user_trips_path(@user) %>
   <%= link_to "Logout", logout_path, class: "nav-right" %>
-  <%= link_to "Past Trips", past_trips_path(current_user), class: "nav-right", style: "background: orange" %>
+  <%= link_to "Past Trips", past_trips_path(@user), class: "nav-right", style: "background: orange" %>
 </div><br />
 
 <body class="user-creation">

@@ -1,9 +1,9 @@
 <div class="topnav" id="myTopnav">
   <%= link_to "Home", users_path %>
-  <%= link_to "Upcoming Trips", user_trips_path(current_user) %>
+  <%= link_to "Upcoming Trips", user_trips_path(@user) %>
   <%= link_to "Logout", logout_path, class: "nav-right" %>
-  <%= link_to "Profile", user_path(current_user), class: "nav-right" %>
-  <%= link_to "Past Trips", past_trips_path(current_user), class: "nav-right", style: "background: orange" %>
+  <%= link_to "Profile", user_path(@user), class: "nav-right" %>
+  <%= link_to "Past Trips", past_trips_path(@user), class: "nav-right", style: "background: orange" %>
 </div>
 
 <% if flash[:alert] %>
@@ -13,20 +13,20 @@
 <div class="row">
   <div class="gallery">
     <div class="desc">View All Upcoming Trips</div>
-    <%= link_to image_tag("trips.jpg"), user_trips_path(current_user), class: "dropdown" %>
+    <%= link_to image_tag("trips.jpg"), user_trips_path(@user), class: "dropdown" %>
     <div class="dropdown-content">
-      <% current_user.upcoming_trips.each do |trip| %>
-        <%= link_to "<button class='btn btn-primary btn-block' type='button'>#{trip.name}</button>".html_safe, user_trip_path(current_user, trip) %>
+      <% @user.upcoming_trips.each do |trip| %>
+        <%= link_to "<button class='btn btn-primary btn-block' type='button'>#{trip.name}</button>".html_safe, user_trip_path(@user, trip) %>
       <% end %>
     </div>
   </div>
 
   <div class="gallery">
     <div class="desc">Flights for Upcoming Trips</div>
-    <%= link_to image_tag("flying.jpg"), user_trips_path(current_user) %>
+    <%= link_to image_tag("flying.jpg"), user_trips_path(@user) %>
     <div class="dropdown-content">
       <div style="font-weight: bold; padding-bottom: 5px">Which trip would you like to view flights for?</div>
-      <% current_user.upcoming_trips.each do |trip| %>
+      <% @user.upcoming_trips.each do |trip| %>
         <%= link_to "<button class='btn btn-primary btn-block' type='button'>#{trip.name}</button>".html_safe, trip_flights_path(trip) %>
       <% end %>
     </div>
@@ -34,10 +34,10 @@
 
   <div class="gallery">
     <div class="desc">Activities for Upcoming Trips</div>
-    <%= link_to image_tag("hiking.jpg"), user_trips_path(current_user) %>
+    <%= link_to image_tag("hiking.jpg"), user_trips_path(@user) %>
     <div class="dropdown-content">
       <div style="font-weight: bold; padding-bottom: 5px">Which trip would you like to view activities for?</div>
-      <% current_user.upcoming_trips.each do |trip| %>
+      <% @user.upcoming_trips.each do |trip| %>
         <%= link_to "<button class='btn btn-primary btn-block' type='button'>#{trip.name}</button>".html_safe, trip_activities_path(trip) %>
       <% end %>
     </div>
@@ -45,10 +45,10 @@
 
   <div class="gallery">
     <div class="desc">Accommodations for Upcoming Trips</div>
-    <%= link_to image_tag("hotel-pillows.jpg"), user_trips_path(current_user) %>
+    <%= link_to image_tag("hotel-pillows.jpg"), user_trips_path(@user) %>
     <div class="dropdown-content">
       <div style="font-weight: bold; padding-bottom: 5px">Which trip would you like to view accommodations for?</div>
-      <% current_user.upcoming_trips.each do |trip| %>
+      <% @user.upcoming_trips.each do |trip| %>
         <%= link_to "<button class='btn btn-primary btn-block' type='button'>#{trip.name}</button>".html_safe, trip_accommodations_path(trip) %>
       <% end %>
     </div>

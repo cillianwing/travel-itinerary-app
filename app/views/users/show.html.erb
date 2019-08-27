@@ -1,8 +1,8 @@
 <div class="topnav" id="myTopnav">
   <%= link_to "Home", users_path %>
-  <%= link_to "Upcoming Trips", user_trips_path(current_user) %>
+  <%= link_to "Upcoming Trips", user_trips_path(@user) %>
   <%= link_to "Logout", logout_path, class: "nav-right" %>
-  <%= link_to "Past Trips", past_trips_path(current_user), class: "nav-right", style: "background: orange" %>
+  <%= link_to "Past Trips", past_trips_path(@user), class: "nav-right", style: "background: orange" %>
 </div><br />
 
 <body class="user-profile">
@@ -27,12 +27,12 @@
       <p class="input-block">Location: <%= @user.location %></p>
       <p class="input-block">Email: <%= @user.email %></p>
       <p class="input-block">Completed Trips: <%= @past_trips.length %></p>
-      <p class="input-block">Cost of Completed Trips: <%= number_to_currency(current_user.trips_cost(@past_trips)) %></p>
+      <p class="input-block">Cost of Completed Trips: <%= number_to_currency(@user.trips_cost(@past_trips)) %></p>
       <p class="input-block">Upcoming Planned Trips: <%= @user.trips.count %></p>
       <p class="input-block">Booked Flights: <%= @user.upcoming_flights.length %></p>
       <p class="input-block">Booked Accommodations: <%= @user.upcoming_accommodations.length %></p>
       <p class="input-block">Booked Activities: <%= @user.upcoming_activities.length %></p>
-      <p class="input-block">Cost of Upcoming Trips: <%= number_to_currency(current_user.trips_cost(current_user.upcoming_trips)) %></p>
+      <p class="input-block">Cost of Upcoming Trips: <%= number_to_currency(@user.trips_cost(@user.upcoming_trips)) %></p>
 
       <%= link_to '<button class="btn btn-primary btn-block" type="button">Edit User</button>'.html_safe, edit_user_path %><br /><br />
 
