@@ -10,7 +10,7 @@ class Flight < ApplicationRecord
 
   def book_ticket(trip)
     # method to be used once user enters a (booked) flight for a specific trip
-    @ticket = Ticket.create(trip_id: trip.id, flight_id: self.id)
+    @ticket = Ticket.create(trip_id: trip.id, flight_id: self.id, confirmation_number: self.confirmation_number)
   end
 
 end
