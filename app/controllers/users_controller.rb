@@ -24,7 +24,8 @@ class UsersController < ApplicationController
     if current_user.id != params[:id].to_i
       redirect_to users_path, alert: "You cannot view another user's profile."
     end
-    @past_trips = Trip.past_trips
+    @past_trips = @user.trips.past_trips
+    @upcoming_trips = @user.trips.upcoming_trips
   end
 
   def edit
@@ -41,8 +42,8 @@ class UsersController < ApplicationController
   end
 
   def past
-    @trips = current_user.trips.past_trips
-    flash.now[:alert] = "You do not have any past trips." if @trips.size == 0
+    @past_trips = current_user.trips.past_trips
+    flash.now[:alert] = "You do not have any past trips." if @past_trips.size == 0
   end
 
   def destroy
